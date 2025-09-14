@@ -1,17 +1,15 @@
 ﻿#pragma once
 #include <vector>
-
 class IComponentPool
 {
-
 };
 
 template<class ComponentT>
 class ComponentPool : public IComponentPool
 {
 public:
-	ComponentPool(const size_t _size)
-		:m_vComponentPool(_size)
+	ComponentPool()
+		:m_vComponentPool(10000)
 	{
 
 	}
@@ -26,7 +24,7 @@ public:
 
 		return &m_vComponentPool[_index];
 	}
-	
+
 	void RemoveComponent(const Entity _index)
 	{
 		if (m_vComponentPool.size() <= _index)
@@ -47,5 +45,5 @@ public:
 	}
 
 private:
-	std::vector<ComponentT> m_vComponentPool;
+	std::vector<ComponentT>m_vComponentPool;
 };

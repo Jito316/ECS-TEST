@@ -28,8 +28,7 @@ public:
 	template<class T>
 	static void Register(std::string_view _name)
 	{
-		void* temp = &GetInstance<T>();
-		Data& data = *static_cast<Data*>(temp);
+		Data& data = *const_cast<Data*>(&GetInstance<T>());
 		{
 			data.m_name = _name.data();
 			data.m_hash = std::hash<std::string>()(data.m_name);
@@ -42,6 +41,7 @@ public:
 		m_nameToID[data.m_name] = data.m_hash;
 	}
 
+	static const std::unordered_map<size_t, ComponentInfo::Data*>& GetRegistry() { return m_registry; }
 
 private:
 	static std::unordered_map<size_t, ComponentInfo::Data*> m_registry;

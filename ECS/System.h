@@ -24,6 +24,10 @@ public:
 
 	virtual void onCreate() = 0;
 	virtual void onDestroy() = 0;
+
+	virtual const ComponentMask GetID() = 0;
+	virtual void onCreateEntity(const Entity _entity) = 0;
+	virtual void onDestroyEntity(const Entity _entity) = 0;
 };
 
 template<typename ...ComponentTs>
@@ -34,7 +38,6 @@ public:
 		: ISystem(_pMgr)
 		, m_pManager(_pMgr)
 	{
-
 	}
 	virtual ~System() override = default;
 
@@ -43,28 +46,32 @@ private:
 	void Update()		override final { foreach(&System::Update); };
 	void PostUpdate()	override final { foreach(&System::PostUpdate); };
 
-	void onCreate()		override final{ foreach(&System::onCreate); };
-	void onDestroy()	override final{ foreach(&System::onDestroy); };
+	void onCreate()		override final { foreach(&System::onCreate); };
+	void onDestroy()	override final { foreach(&System::onDestroy); };
 
 	void foreach(void(System::* _func)(ComponentTs&...))
 	{
-		for (auto& entitiy : m_pManager->GetActiveEntitys())
+		for (auto& entity : m_entityContainer.m_vEntities)
 		{
-			// 各コンポーネントを取得
 			if constexpr (sizeof...(ComponentTs) > 0)
 			{
-				// 全てのコンポーネントを揃えられたら呼び出す
-				auto tuple = m_pManager->GetComponents<ComponentTs...>(entitiy);
-				if (tuple)
-				{
-					std::apply([&](auto*... comps) {
-						(this->*_func)(*comps...);
-						}, *tuple);
-				}
+				(this->*_func)(*m_pManager->GetComponent<ComponentTs>(entity)...);
 			}
 		}
 	}
 
+	const ComponentMask GetID()override
+	{
+		return((1 << ComponentInfo::GetInstance<ComponentTs>().m_id) | ...);
+	}
+	void onCreateEntity(const Entity _entity)override
+	{
+		m_entityContainer.Add(_entity);
+	}
+	void onDestroyEntity(const Entity _entity)override
+	{
+		m_entityContainer.Remove(_entity);
+	}
 
 protected:
 	virtual void PreUpdate(ComponentTs&...) {}
@@ -75,15 +82,5 @@ protected:
 	virtual void onDestroy(ComponentTs&...) {}
 
 	ECSManager* m_pManager;
-};
-
-class RigidUpdate
-	: public System<Transfrom, Rigidbody> 
-{
-protected:
-	void Update(Transfrom& _trans, Rigidbody& _rigid) override
-	{
-		m_pManager->GetComponents<Transfrom, Rigidbody>(0);
-		_trans.m_pos += _rigid.m_move;
-	}
+	ECSManager::EntityContainer m_entityContainer;
 };

@@ -1,8 +1,8 @@
 ﻿#pragma once
 #include <shared_mutex>
-#include <optional>
-#include <tuple>
 #include <vector>
+#include <list>
+#include <unordered_map>
 
 #include "ClassInfo.h"
 #include "Entity.h"
@@ -13,21 +13,39 @@ class ISystem;
 class ECSManager
 {
 public:
+	struct EntityContainer
+	{
+		EntityContainer()
+			:m_vEntityToIndex(10000, -1)
+		{
+
+		}
+
+		void Add(const Entity _entity);
+		void Remove(const Entity _entity);
+
+		std::vector<Entity> m_vEntities;
+		std::vector<size_t> m_vEntityToIndex;
+	};
+
+	void SetUp();
 	void excute();
 
-	void CreateEntity(const Entity _entity) {}
-	void DeleteEntity(const Entity _entity) {}
+	Entity CreateEntity();
+	void DeleteEntity(const Entity _entity);
 
 	template<class T>
-	T* AddComponent(const Entity _index)
+	T* AddComponent(const Entity _entity)
 	{
-		if (m_vComponentPools.size() > _index)
+		if (m_vComponentPools.size() > _entity)
 		{
 			auto& ID = ComponentInfo::GetInstance<T>().m_id;
 			auto pool = m_vComponentPools[ID];
 			if (pool)
 			{
-				return static_cast<ComponentPool<T>*>(pool.get())->AddComponent(_index);
+				m_vEntityToArchetype[_entity] |= 1 << ID;
+				AddSystemTarget(_entity, m_vEntityToArchetype[_entity]);
+				return static_cast<ComponentPool<T>*>(pool.get())->AddComponent(_entity);
 			}
 		}
 
@@ -35,64 +53,60 @@ public:
 	}
 
 	template<class T>
-	void RemoveComponent(const Entity _index)
+	void RemoveComponent(const Entity _entity)
 	{
-		if (m_vComponentPools.size() > _index)
+		if (m_vComponentPools.size() > _entity)
 		{
 			auto& ID = ComponentInfo::GetInstance<T>().m_id;
 			auto pool = m_vComponentPools[ID];
 			if (pool)
 			{
-				static_cast<ComponentPool<T>*>(pool.get())->RemoveComponent(_index);
+				m_vEntityToArchetype[_entity] &= ~(1 << ID);
+				RemoveSystemTarget(_entity, m_vEntityToArchetype[_entity]);
+				static_cast<ComponentPool<T>*>(pool.get())->RemoveComponent(_entity);
 			}
 		}
 	}
 
 	template<class T>
-	T* GetComponent(const Entity _index)
+	T* GetComponent(const Entity _entity)
 	{
-		if (m_vComponentPools.size() > _index)
+		if (m_vComponentPools.size() > _entity)
 		{
 			auto& ID = ComponentInfo::GetInstance<T>().m_id;
-			auto pool = m_vComponentPools[ID];
-			if (pool)
+			if (m_vEntityToArchetype[_entity].test(ID))
 			{
-				return static_cast<ComponentPool<T>*>(pool.get())->GetComponent(_index);
+				return static_cast<ComponentPool<T>*>(m_vComponentPools[ID].get())->GetComponent(_entity);
 			}
 		}
 		return nullptr;
 	}
 
-	template<class... Ts>
-	std::optional<std::tuple<Ts*...>> GetComponents(const Entity entity)
+	template<class T>
+	void AddSystem()
 	{
-		// 必要なコンポーネントのマスクを作成
-		ComponentMask archetype = (0 | ... | ComponentInfo::GetInstance<Ts>().m_id);
-
-		// エンティティが必要なコンポーネントを全て持っているか判定
-		if ((m_vArchetypes[entity] & archetype).none())
-		{
-			return std::nullopt;
-		}
-
-		// それぞれのコンポーネントを取得
-		std::tuple<Ts*...> result{ GetComponent<Ts>(entity)... };
-
-		// nullptr が含まれていたら無効
-		if (((std::get<Ts*>(result) != nullptr) && ...))
-		{
-			return result;
-		}
-		return std::nullopt;
+		m_vSystems.push_back(std::make_shared<T>(this));
 	}
 
-	const std::vector<Entity>& GetActiveEntitys() { return {}; }
+	const std::vector<Entity>& GetEntity() { return m_entityContainer.m_vEntities; }
 
 private:
-	mutable std::vector<ComponentMask> m_vArchetypes;
+	void AddSystemTarget(const Entity _entity, const ComponentMask& _id);
+	void RemoveSystemTarget(const Entity _entity, const ComponentMask& _id);
 
+	//エンティティの状態管理
+	EntityContainer m_entityContainer;
+	std::vector<bool> m_vEntityToActive;
+	std::vector<ComponentMask> m_vEntityToArchetype;
+	std::list<Entity> m_sRecycleEntities;
+
+	//コンポーネント管理
 	std::vector<std::shared_ptr<IComponentPool>> m_vComponentPools;
-	std::vector<std::shared_ptr<ISystem>> m_systems;
+
+	//システム管理
+	std::vector<std::shared_ptr<ISystem>> m_vSystems;
+	std::unordered_map<ComponentMask, size_t> m_umSystemToID;
+
 
 public:
 	ECSManager() = default;
