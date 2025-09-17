@@ -52,6 +52,7 @@ int main()
 {
 	ECSManager _ECSManager;
 	_ECSManager.SetUp();
+	/*
 	_ECSManager.AddSystem<RigidbodyUpdate>();
 	_ECSManager.AddSystem<ShowPosistionUpdate>();
 	Entity entity = _ECSManager.CreateEntity();
@@ -64,5 +65,8 @@ int main()
 		_ECSManager.AddComponent<Transfrom>(entity)->m_pos = { 25,5,-5 };
 		_ECSManager.AddComponent<Rigidbody>(entity);
 	}
+	*/
+
 	_ECSManager.excute();
+	_ECSManager.Shutdown();
 }

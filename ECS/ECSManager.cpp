@@ -1,20 +1,26 @@
 ﻿#include "ECSManager.h"
+#include "BinaryWriteHelper.h"
 #include "System.h"
 
 void ECSManager::SetUp()
 {
-	auto& registry = ComponentInfo::GetRegistry();
+	{
+		BinaryFileVecotrReader reader("ECSManager.dat");
+		if (!reader.Read(m_vEntityToActive))m_vEntityToActive.resize(MAXENTITIES);
+		if (!reader.Read(m_vEntityToArchetype))m_vEntityToArchetype.resize(MAXENTITIES);
+		if (!reader.Read(m_sRecycleEntities))m_sRecycleEntities.resize(1);
+	}
 
+	auto& registry = ComponentInfo::GetRegistry();
 	m_vComponentPools.clear();
 	m_vComponentPools.resize(registry.size() + 1);
 	for (auto& [key, data] : registry)
 	{
-		m_vComponentPools[data->m_id] = std::shared_ptr<IComponentPool>(data->m_creator());
+		auto temp = std::shared_ptr<IComponentPool>(data->m_creator());
+		temp->BinaryRead(data->m_name +".dat", MAXENTITIES);
+		m_vComponentPools[data->m_id] = temp;
 	}
 
-	m_vEntityToActive.reserve(10000);
-	m_vEntityToArchetype.reserve(10000);
-	m_sRecycleEntities.resize(1);
 }
 
 void ECSManager::excute()
@@ -33,12 +39,34 @@ void ECSManager::excute()
 	}
 }
 
+void ECSManager::Shutdown()
+{
+	{
+		BinaryFileVecotrWriter reader("ECSManager.dat");
+		reader.Write(m_vEntityToActive);
+		reader.Write(m_vEntityToArchetype);
+		reader.Write(m_sRecycleEntities);
+	}
+
+	auto& registry = ComponentInfo::GetRegistry();
+	for (auto& [key, data] : registry)
+	{
+		m_vComponentPools[data->m_id]->BinaryWrite(data->m_name + ".dat");
+	}
+
+	m_vEntityToActive.clear();
+	m_vEntityToArchetype.clear();
+	m_sRecycleEntities.clear();
+	m_vComponentPools.clear();
+}
+
 Entity ECSManager::CreateEntity()
 {
 	Entity newEntity;
 	if (m_sRecycleEntities.size() == 1)
 	{
-		newEntity = ++m_sRecycleEntities.front();
+		newEntity = m_sRecycleEntities.front();
+		++m_sRecycleEntities.front();
 	}
 	else
 	{
@@ -124,7 +152,7 @@ void ECSManager::EntityContainer::Remove(const Entity _entity)
 	}
 
 	size_t backIndex = m_vEntities.size() - 1;
-	size_t backEntity = m_vEntities.back();
+	Entity backEntity = m_vEntities.back();
 	size_t removeIndex = m_vEntityToIndex[_entity];
 
 	// 削除する要素が最後の要素でなければ

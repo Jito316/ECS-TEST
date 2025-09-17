@@ -137,6 +137,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinaryWriteHelper.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentPool.h" />
     <ClInclude Include="ECSManager.h" />

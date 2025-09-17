@@ -1,19 +1,18 @@
 ﻿#pragma once
 #include <vector>
+#include "BinaryWriteHelper.h"
+
 class IComponentPool
 {
+public:
+	virtual void BinaryWrite(const std::string& _name) = 0;
+	virtual void BinaryRead(const std::string& _name, size_t _defaultSize) = 0;
 };
 
 template<class ComponentT>
 class ComponentPool : public IComponentPool
 {
 public:
-	ComponentPool()
-		:m_vComponentPool(10000)
-	{
-
-	}
-
 	ComponentT* AddComponent(const Entity _index)
 	{
 		if (m_vComponentPool.size() <= _index)
@@ -42,6 +41,20 @@ public:
 		}
 
 		return nullptr;
+	}
+
+	void BinaryWrite(const std::string& _name)override
+	{
+		BinaryFileVecotrWriter writer(_name);
+		writer.Write(m_vComponentPool);
+	}
+	void BinaryRead(const std::string& _name, size_t _defaultSize)override
+	{
+		BinaryFileVecotrReader reader(_name);
+		if (!reader.Read(m_vComponentPool))
+		{
+			m_vComponentPool.resize(_defaultSize);
+		}
 	}
 
 private:

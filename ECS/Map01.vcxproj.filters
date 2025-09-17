@@ -39,5 +39,8 @@
     <ClInclude Include="ComponentPool.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="BinaryWriteHelper.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

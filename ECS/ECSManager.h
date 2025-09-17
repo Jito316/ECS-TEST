@@ -16,7 +16,7 @@ public:
 	struct EntityContainer
 	{
 		EntityContainer()
-			:m_vEntityToIndex(10000, -1)
+			:m_vEntityToIndex(MAXENTITIES, -1)
 		{
 
 		}
@@ -30,6 +30,7 @@ public:
 
 	void SetUp();
 	void excute();
+	void Shutdown();
 
 	Entity CreateEntity();
 	void DeleteEntity(const Entity _entity);
@@ -98,7 +99,7 @@ private:
 	EntityContainer m_entityContainer;
 	std::vector<bool> m_vEntityToActive;
 	std::vector<ComponentMask> m_vEntityToArchetype;
-	std::list<Entity> m_sRecycleEntities;
+	std::vector<Entity> m_sRecycleEntities;
 
 	//コンポーネント管理
 	std::vector<std::shared_ptr<IComponentPool>> m_vComponentPools;

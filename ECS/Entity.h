@@ -3,7 +3,8 @@
 #include <vector>
 #include <bitset>
 
-#define MaxComponents 100
+#define MAXCOMPONENTS 100
+#define MAXENTITIES 1000
 
-using ComponentMask = std::bitset<MaxComponents>;
+using ComponentMask = std::bitset<MAXCOMPONENTS>;
 using Entity = std::uint32_t;	// インデックス
