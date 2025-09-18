@@ -100,6 +100,47 @@ public:
 		return m_ofs.good();
 	}
 
+	template<class T>
+	inline bool Write(std::vector<T>& _data)
+	{
+		if (!m_ofs.is_open())return false;
+
+		// 要素数を書き込み
+		size_t size = _data.size();
+		m_ofs.write(reinterpret_cast<const char*>(&size), sizeof(size));
+
+		// 要素本体を書き込み
+		if (!_data.empty()) {
+			m_ofs.write(reinterpret_cast<const char*>(_data.data()), sizeof(T) * size);
+		}
+
+		return m_ofs.good();
+	}
+
+	template<>
+	inline bool Write<bool>(std::vector<bool>& _data)
+	{
+		if (!m_ofs.is_open())return false;
+
+		// 要素数を書き込み
+		size_t size = _data.size();
+		m_ofs.write(reinterpret_cast<const char*>(&size), sizeof(size));
+
+		// 要素本体を書き込み
+		if (!_data.empty()) {
+			std::vector<uint8_t> temp;
+			temp.resize(_data.size());
+			for (size_t i = 0; i < _data.size(); ++i)
+			{
+				temp[i] = _data[i];
+			}
+
+			m_ofs.write(reinterpret_cast<const char*>(temp.data()), sizeof(bool) * size);
+		}
+
+		return m_ofs.good();
+	}
+
 	// ファイルを閉じる
 	inline void End()
 	{
@@ -136,99 +177,7 @@ public:
 		return m_ifs.good();
 	}
 
-	// 終了（閉じる）
-	inline void End()
-	{
-		if (m_ifs.is_open())
-		{
-			m_ifs.close();
-		}
-	}
-
-private:
-	std::ifstream m_ifs;
-};
-
-class BinaryFileVecotrWriter
-{
-public:
-	BinaryFileVecotrWriter() = default;
-	BinaryFileVecotrWriter(const std::string& _path) { Start(_path); }
-	~BinaryFileVecotrWriter() { End(); }
-
-	// ファイルを開く
-	inline bool Start(const std::string& _path)
-	{
-		if (!m_ofs.is_open())
-			m_ofs.open(_path, std::ios::out | std::ios::trunc | std::ios::binary);
-		return m_ofs.is_open();
-	}
-
-	// 書き込み
-	template<class T>
-	inline bool Write(std::vector<T>& _data)
-	{
-		if (!m_ofs.is_open())return false;
-
-		// 要素数を書き込み
-		size_t size = _data.size();
-		m_ofs.write(reinterpret_cast<const char*>(&size), sizeof(size));
-
-		// 要素本体を書き込み
-		if (!_data.empty()) {
-			m_ofs.write(reinterpret_cast<const char*>(_data.data()), sizeof(T) * size);
-		}
-
-		return m_ofs.good();
-	}
-
-	template<>
-	inline bool Write<bool>(std::vector<bool>& _data)
-	{
-		if (!m_ofs.is_open())return false;
-
-		// 要素数を書き込み
-		size_t size = _data.size();
-		m_ofs.write(reinterpret_cast<const char*>(&size), sizeof(size));
-
-		// 要素本体を書き込み
-		if (!_data.empty()) {
-			std::vector<uint8_t> temp(,);
-			m_ofs.write(reinterpret_cast<const char*>(temp.data()), sizeof(bool) * size);
-		}
-
-		return m_ofs.good();
-	}
-
-	// ファイルを閉じる
-	inline void End()
-	{
-		if (m_ofs.is_open())
-		{
-			m_ofs.close();
-		}
-	}
-
-private:
-	std::ofstream m_ofs;
-};
-
-class BinaryFileVecotrReader
-{
-public:
-	BinaryFileVecotrReader() = default;
-	BinaryFileVecotrReader(const std::string& _path) { Start(_path); };
-	~BinaryFileVecotrReader() { End(); }
-
-	// 開始（読み込み用に開く）
-	inline bool Start(const std::string& _path)
-	{
-		if (!m_ifs.is_open())
-			m_ifs.open(_path, std::ios::in | std::ios::binary);
-		return m_ifs.is_open();
-	}
-
-	template <typename T>
+	template <class T>
 	inline bool Read(std::vector<T>& _data)
 	{
 		if (!m_ifs.is_open())return false;
@@ -245,7 +194,7 @@ public:
 
 		return  m_ifs.good();
 	}
-	
+
 	template <>
 	inline bool Read<bool>(std::vector<bool>& _data)
 	{
@@ -256,11 +205,16 @@ public:
 		m_ifs.read(reinterpret_cast<char*>(&size), sizeof(size));
 
 		// ベクターをリサイズしてデータを読み込む
-		_data.resize(size);
 		if (size > 0) {
-			_data;
-			std::vector<uint8_t>& temp = *reinterpret_cast<std::vector<uint8_t>*>(&_data);
+			std::vector<uint8_t> temp(size);
+			_data.resize(size);
 			m_ifs.read(reinterpret_cast<char*>(temp.data()), sizeof(bool) * size);
+
+			temp.resize(_data.size());
+			for (size_t i = 0; i < _data.size(); ++i)
+			{
+				_data[i] = temp[i];
+			}
 		}
 
 		return  m_ifs.good();

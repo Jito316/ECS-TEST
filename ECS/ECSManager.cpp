@@ -5,10 +5,35 @@
 void ECSManager::SetUp()
 {
 	{
-		BinaryFileVecotrReader reader("ECSManager.dat");
+		BinaryFileReader reader("ECSManager.dat");
 		if (!reader.Read(m_vEntityToActive))m_vEntityToActive.resize(MAXENTITIES);
 		if (!reader.Read(m_vEntityToArchetype))m_vEntityToArchetype.resize(MAXENTITIES);
 		if (!reader.Read(m_sRecycleEntities))m_sRecycleEntities.resize(1);
+		reader.Read(m_entityContainer.m_vEntities);
+		reader.Read(m_entityContainer.m_vEntityToIndex);
+	}
+
+	{
+		BinaryFileReader reader("System.dat");
+		size_t length = 0;
+		reader.Read(&length, sizeof(size_t));
+		for (size_t i = 0; i < length; i++)
+		{
+			size_t hash = 0;
+			reader.Read(&hash, sizeof(size_t));
+			if (const SystemInfo::Data* data; (data = SystemInfo::FindData(hash)))
+			{
+				auto system = std::shared_ptr<ISystem>(data->m_creator());
+				system->setID(data->m_hash);
+				system->setOwner(this);
+
+				auto& temp = system->GetTragetEntities();
+				reader.Read(temp.m_vEntities);
+				reader.Read(temp.m_vEntityToIndex);
+
+				m_vSystems.push_back(system);
+			}
+		}
 	}
 
 	auto& registry = ComponentInfo::GetRegistry();
@@ -17,7 +42,7 @@ void ECSManager::SetUp()
 	for (auto& [key, data] : registry)
 	{
 		auto temp = std::shared_ptr<IComponentPool>(data->m_creator());
-		temp->BinaryRead(data->m_name +".dat", MAXENTITIES);
+		temp->BinaryRead(data->m_name + ".dat", MAXENTITIES);
 		m_vComponentPools[data->m_id] = temp;
 	}
 
@@ -42,10 +67,26 @@ void ECSManager::excute()
 void ECSManager::Shutdown()
 {
 	{
-		BinaryFileVecotrWriter reader("ECSManager.dat");
-		reader.Write(m_vEntityToActive);
-		reader.Write(m_vEntityToArchetype);
-		reader.Write(m_sRecycleEntities);
+		BinaryFileWriter writer("ECSManager.dat");
+		writer.Write(m_vEntityToActive);
+		writer.Write(m_vEntityToArchetype);
+		writer.Write(m_sRecycleEntities);
+		writer.Write(m_entityContainer.m_vEntities);
+		writer.Write(m_entityContainer.m_vEntityToIndex);
+	}
+
+	{
+		BinaryFileWriter writer("System.dat");
+		size_t length = m_vSystems.size();
+		writer.Write(&length, sizeof(size_t));
+		for (auto& system : m_vSystems) 
+		{
+			size_t id = system->getID();
+			auto& temp =  system->GetTragetEntities();
+			writer.Write(&id, sizeof(size_t));
+			writer.Write(temp.m_vEntities);
+			writer.Write(temp.m_vEntityToIndex);
+		}
 	}
 
 	auto& registry = ComponentInfo::GetRegistry();
@@ -105,7 +146,8 @@ void ECSManager::AddSystemTarget(const Entity _entity, const ComponentMask& _id)
 {
 	for (auto& system : m_vSystems)
 	{
-		if ((_id & system->GetID()) == _id)
+		ComponentMask archetype = system->GetArchetype();
+		if (archetype == (_id & archetype))
 		{
 			system->onCreateEntity(_entity);
 		}
@@ -116,52 +158,10 @@ void ECSManager::RemoveSystemTarget(const Entity _entity, const ComponentMask& _
 {
 	for (auto& system : m_vSystems)
 	{
-		if ((_id & system->GetID()) == _id)
+		ComponentMask archetype = system->GetArchetype();
+		if (archetype == (_id & archetype))
 		{
 			system->onDestroyEntity(_entity);
 		}
 	}
-}
-
-void ECSManager::EntityContainer::Add(const Entity _entity)
-{
-	// すでに追加されていたら
-	bool isOveerRange = m_vEntityToIndex.size() < _entity;
-	if (!isOveerRange)
-	{
-		if (m_vEntityToIndex[_entity] != -1)
-		{
-			return;
-		}
-	}
-
-	m_vEntities.emplace_back(_entity);
-
-	if (isOveerRange)
-	{
-		m_vEntityToIndex.resize(_entity + 1);
-	}
-	m_vEntityToIndex[_entity] = m_vEntities.size() - 1;
-}
-
-void ECSManager::EntityContainer::Remove(const Entity _entity)
-{
-	if (m_vEntityToIndex.size() < _entity)
-	{
-		return;
-	}
-
-	size_t backIndex = m_vEntities.size() - 1;
-	Entity backEntity = m_vEntities.back();
-	size_t removeIndex = m_vEntityToIndex[_entity];
-
-	// 削除する要素が最後の要素でなければ
-	if (_entity != m_vEntities.back())
-	{
-		m_vEntities[removeIndex] = backEntity;
-		m_vEntityToIndex[backIndex] = removeIndex;
-	}
-
-	// 最後尾のEntityを削除
-	m_vEntities.pop_back();
 }

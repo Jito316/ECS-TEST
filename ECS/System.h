@@ -6,16 +6,9 @@
 #include "Component.h"
 #include "ECSManager.h"
 
-class ECSManager;
-
 class ISystem
 {
 public:
-	ISystem(ECSManager* _pMgr)
-	{
-
-	}
-
 	virtual ~ISystem() = default;
 
 	virtual void PreUpdate() = 0;
@@ -25,20 +18,22 @@ public:
 	virtual void onCreate() = 0;
 	virtual void onDestroy() = 0;
 
-	virtual const ComponentMask GetID() = 0;
+	virtual const ComponentMask GetArchetype() = 0;
 	virtual void onCreateEntity(const Entity _entity) = 0;
 	virtual void onDestroyEntity(const Entity _entity) = 0;
+
+	virtual size_t getID()const = 0;
+	virtual void setID(const size_t _id) = 0;
+
+	virtual void setOwner(ECSManager* _mgr) = 0;
+
+	virtual EntityContainer& GetTragetEntities() = 0;
 };
 
 template<typename ...ComponentTs>
 class System : public ISystem
 {
 public:
-	System(ECSManager* _pMgr)
-		: ISystem(_pMgr)
-		, m_pManager(_pMgr)
-	{
-	}
 	virtual ~System() override = default;
 
 private:
@@ -60,9 +55,10 @@ private:
 		}
 	}
 
-	const ComponentMask GetID()override
+	const ComponentMask GetArchetype()override
 	{
-		return((1 << ComponentInfo::GetInstance<ComponentTs>().m_id) | ...);
+		ComponentMask archetype;
+		return(archetype.set(ComponentInfo::GetInstance<ComponentTs>().m_id)| ...);
 	}
 	void onCreateEntity(const Entity _entity)override
 	{
@@ -73,6 +69,25 @@ private:
 		m_entityContainer.Remove(_entity);
 	}
 
+	size_t getID()const override
+	{
+		return m_id;
+	}
+	void setID(const size_t _id)override
+	{
+		m_id = _id;
+	}
+
+	void setOwner(ECSManager* _mgr)override
+	{
+		m_pManager = _mgr;
+	}
+
+	EntityContainer& GetTragetEntities() override 
+	{
+		return m_entityContainer;
+	}
+
 protected:
 	virtual void PreUpdate(ComponentTs&...) {}
 	virtual void Update(ComponentTs&...) {}
@@ -81,6 +96,7 @@ protected:
 	virtual void onCreate(ComponentTs&...) {}
 	virtual void onDestroy(ComponentTs&...) {}
 
-	ECSManager* m_pManager;
-	ECSManager::EntityContainer m_entityContainer;
+	ECSManager* m_pManager = nullptr;
+	EntityContainer m_entityContainer;
+	size_t m_id = 0;
 };

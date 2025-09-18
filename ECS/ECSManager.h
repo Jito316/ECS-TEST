@@ -13,21 +13,6 @@ class ISystem;
 class ECSManager
 {
 public:
-	struct EntityContainer
-	{
-		EntityContainer()
-			:m_vEntityToIndex(MAXENTITIES, -1)
-		{
-
-		}
-
-		void Add(const Entity _entity);
-		void Remove(const Entity _entity);
-
-		std::vector<Entity> m_vEntities;
-		std::vector<size_t> m_vEntityToIndex;
-	};
-
 	void SetUp();
 	void excute();
 	void Shutdown();
@@ -44,7 +29,7 @@ public:
 			auto pool = m_vComponentPools[ID];
 			if (pool)
 			{
-				m_vEntityToArchetype[_entity] |= 1 << ID;
+				m_vEntityToArchetype[_entity] |= ComponentMask().set(ID);
 				AddSystemTarget(_entity, m_vEntityToArchetype[_entity]);
 				return static_cast<ComponentPool<T>*>(pool.get())->AddComponent(_entity);
 			}
@@ -62,7 +47,7 @@ public:
 			auto pool = m_vComponentPools[ID];
 			if (pool)
 			{
-				m_vEntityToArchetype[_entity] &= ~(1 << ID);
+				m_vEntityToArchetype[_entity] &= ~(ComponentMask().set(ID));
 				RemoveSystemTarget(_entity, m_vEntityToArchetype[_entity]);
 				static_cast<ComponentPool<T>*>(pool.get())->RemoveComponent(_entity);
 			}
@@ -86,7 +71,9 @@ public:
 	template<class T>
 	void AddSystem()
 	{
-		m_vSystems.push_back(std::make_shared<T>(this));
+		m_vSystems.push_back(std::make_shared<T>());
+		m_vSystems.back()->setOwner(this);
+		m_vSystems.back()->setID(SystemInfo::GetInstance<T>().m_hash);
 	}
 
 	const std::vector<Entity>& GetEntity() { return m_entityContainer.m_vEntities; }

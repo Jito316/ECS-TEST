@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <vector>
 #include "BinaryWriteHelper.h"
+#include "Entity.h"
 
 class IComponentPool
 {
@@ -45,12 +46,12 @@ public:
 
 	void BinaryWrite(const std::string& _name)override
 	{
-		BinaryFileVecotrWriter writer(_name);
+		BinaryFileWriter writer(_name);
 		writer.Write(m_vComponentPool);
 	}
 	void BinaryRead(const std::string& _name, size_t _defaultSize)override
 	{
-		BinaryFileVecotrReader reader(_name);
+		BinaryFileReader reader(_name);
 		if (!reader.Read(m_vComponentPool))
 		{
 			m_vComponentPool.resize(_defaultSize);
