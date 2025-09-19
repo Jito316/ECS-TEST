@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Src\Script\Object\Component\Audio\AudioPlayerComponent\AudioPlayerComponent.h">
+      <Filter>Src\Script\Object\Component\Audio\AudioPlayerComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\Audio\AudioListenerComponent\AudioListenerComponent.h">
+      <Filter>Src\Script\Object\Component\Audio\AudioListenerComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\ScriptPch.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Script.h">
+      <Filter>Src\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Math\AssetCollision.h">
+      <Filter>Src\Script\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Math\KdCollision.h">
+      <Filter>Src\Script\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\BuildInComponentRegister.h">
+      <Filter>Src\Script\Object\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\ModelAnimatorComponent\ModelAnimatorComponent.h">
+      <Filter>Src\Script\Object\Component\ModelAnimatorComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\Component.h">
+      <Filter>Src\Script\Object\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\CameraComponent\CameraComponent.h">
+      <Filter>Src\Script\Object\Component\CameraComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\ColliderComponent\ColliderComponent.h">
+      <Filter>Src\Script\Object\Component\ColliderComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\RigidbodyComponent\RigidbodyComponent.h">
+      <Filter>Src\Script\Object\Component\RigidbodyComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\GameObject\GameObject.h">
+      <Filter>Src\Script\Object\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Command\CommandRegister.h">
+      <Filter>Src\Script\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Command\Command_CreateObject\Command_CreateObject.h">
+      <Filter>Src\Script\Command\Command_CreateObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Command\Command_SelectObject\Command_SelectObject.h">
+      <Filter>Src\Script\Command\Command_SelectObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Utility\Utility.h">
+      <Filter>Src\Script\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Utility\StateBase\StateBase.h">
+      <Filter>Src\Script\Utility\StateBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Utility\Animation2D\Animation2D.h">
+      <Filter>Src\Script\Utility\Animation2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Manager\ObjectManager\GameObjectManager.h">
+      <Filter>Src\Script\Manager\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Manager\ComponentFactory\AllComponentRegister.h">
+      <Filter>Src\Script\Manager\ComponentFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Manager\ComponentFactory\ComponentFactory.h">
+      <Filter>Src\Script\Manager\ComponentFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\IScript.h">
+      <Filter>Src\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Object\IObject.h">
+      <Filter>Src\Interface\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Object\Component\IComponent.h">
+      <Filter>Src\Interface\Object\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Object\GameObject\IGameObject.h">
+      <Filter>Src\Interface\Object\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Manager\ObjectManager\IGameObjectManager.h">
+      <Filter>Src\Interface\Manager\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Manager\ComponentFactory\IComponentFactory.h">
+      <Filter>Src\Interface\Manager\ComponentFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Object\GameObject\Transform\ITransform.h">
+      <Filter>Src\Interface\Object\GameObject\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\ColliderComponent\MeshColliderComponent\MeshColliderComponent.h">
+      <Filter>Src\Script\Object\Component\ColliderComponent\MeshColliderComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\ColliderComponent\SphereColliderComponent\SphereColliderComponent.h">
+      <Filter>Src\Script\Object\Component\ColliderComponent\SphereColliderComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\ColliderComponent\BoxColliderComponent\BoxColliderComponent.h">
+      <Filter>Src\Script\Object\Component\ColliderComponent\BoxColliderComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Event\Collider_Event\Collider_Event.h">
+      <Filter>Src\Script\Event\Collider_Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Manager\ColliderManager\ColliderManager.h">
+      <Filter>Src\Script\Manager\ColliderManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\RendererComponent\BaseRendererComponent.h">
+      <Filter>Src\Script\Object\Component\RendererComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\RendererComponent\ModelRendererComponent\ModelRendererComponent.h">
+      <Filter>Src\Script\Object\Component\RendererComponent\ModelRendererComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\RendererComponent\TextureRendererComponent\TextureRendererComponent.h">
+      <Filter>Src\Script\Object\Component\RendererComponent\TextureRendererComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\RendererComponent\SquarePolygonRendererComponent\SquarePolygonRendererComponent.h">
+      <Filter>Src\Script\Object\Component\RendererComponent\SquarePolygonRendererComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Script\Object\Component\TransformComponent\TransformComponent.h">
+      <Filter>Src\Script\Object\Component\TransformComponent</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\Script\Object\Component\Audio\AudioPlayerComponent\AudioPlayerComponent.cpp">
+      <Filter>Src\Script\Object\Component\Audio\AudioPlayerComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\Audio\AudioListenerComponent\AudioListenerComponent.cpp">
+      <Filter>Src\Script\Object\Component\Audio\AudioListenerComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ScriptPch.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Script.cpp">
+      <Filter>Src\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Math\AssetCollision.cpp">
+      <Filter>Src\Script\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Math\KdCollision.cpp">
+      <Filter>Src\Script\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\ModelAnimatorComponent\ModelAnimatorComponent.cpp">
+      <Filter>Src\Script\Object\Component\ModelAnimatorComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\Component.cpp">
+      <Filter>Src\Script\Object\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\CameraComponent\CameraComponent.cpp">
+      <Filter>Src\Script\Object\Component\CameraComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\ColliderComponent\ColliderComponent.cpp">
+      <Filter>Src\Script\Object\Component\ColliderComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\RigidbodyComponent\RigidbodyComponent.cpp">
+      <Filter>Src\Script\Object\Component\RigidbodyComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\GameObject\GameObject.cpp">
+      <Filter>Src\Script\Object\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Command\CommandRegister.cpp">
+      <Filter>Src\Script\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Command\Command_CreateObject\Command_CreateObject.cpp">
+      <Filter>Src\Script\Command\Command_CreateObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Command\Command_SelectObject\Command_SelectObject.cpp">
+      <Filter>Src\Script\Command\Command_SelectObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Utility\Animation2D\Animation2D.cpp">
+      <Filter>Src\Script\Utility\Animation2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Manager\ObjectManager\GameObjectManager.cpp">
+      <Filter>Src\Script\Manager\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Manager\ComponentFactory\ComponentFactory.cpp">
+      <Filter>Src\Script\Manager\ComponentFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\ColliderComponent\MeshColliderComponent\MeshColliderComponent.cpp">
+      <Filter>Src\Script\Object\Component\ColliderComponent\MeshColliderComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\ColliderComponent\SphereColliderComponent\SphereColliderComponent.cpp">
+      <Filter>Src\Script\Object\Component\ColliderComponent\SphereColliderComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\ColliderComponent\BoxColliderComponent\BoxColliderComponent.cpp">
+      <Filter>Src\Script\Object\Component\ColliderComponent\BoxColliderComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Event\Collider_Event\Collider_Event.cpp">
+      <Filter>Src\Script\Event\Collider_Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Manager\ColliderManager\ColliderManager.cpp">
+      <Filter>Src\Script\Manager\ColliderManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\RendererComponent\BaseRendererComponent.cpp">
+      <Filter>Src\Script\Object\Component\RendererComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\RendererComponent\ModelRendererComponent\ModelRendererComponent.cpp">
+      <Filter>Src\Script\Object\Component\RendererComponent\ModelRendererComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\RendererComponent\TextureRendererComponent\TextureRendererComponent.cpp">
+      <Filter>Src\Script\Object\Component\RendererComponent\TextureRendererComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\RendererComponent\SquarePolygonRendererComponent\SquarePolygonRendererComponent.cpp">
+      <Filter>Src\Script\Object\Component\RendererComponent\SquarePolygonRendererComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Object\Component\TransformComponent\TransformComponent.cpp">
+      <Filter>Src\Script\Object\Component\TransformComponent</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{3a29ef34-7699-48e9-81dd-6f64607a8996}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\User">
+      <UniqueIdentifier>{506c90f4-68ff-4888-aabb-63d3f41c9fac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script">
+      <UniqueIdentifier>{7f2b4ced-3f60-45a1-b2ba-9da0f43e7be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object">
+      <UniqueIdentifier>{3528f80d-b84d-44c8-8554-bbefefdd2e3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component">
+      <UniqueIdentifier>{613ea5b4-abee-459b-b10b-92904dc14d99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\Audio">
+      <UniqueIdentifier>{4de2cbf6-b127-47c3-8d1d-712b2f11f3e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\Audio\AudioPlayerComponent">
+      <UniqueIdentifier>{e99acd6d-8077-4ccb-b638-22b5a628f1b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\Audio\AudioListenerComponent">
+      <UniqueIdentifier>{f392efe7-c137-47c1-83d3-21af1d9b5b4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Math">
+      <UniqueIdentifier>{ba83b2a4-258a-463c-8cb6-58914c4094ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\ModelAnimatorComponent">
+      <UniqueIdentifier>{ef90835b-b875-4ebb-9098-2886fb63a24d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\CameraComponent">
+      <UniqueIdentifier>{a14b4d31-a9e3-466a-bd23-92fba1e2fb53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\ColliderComponent">
+      <UniqueIdentifier>{a3e34f5c-556c-4410-a609-693e2cbadb49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\RigidbodyComponent">
+      <UniqueIdentifier>{c8d48397-bd29-43db-b869-67317ff62aa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\GameObject">
+      <UniqueIdentifier>{99699fbc-274f-4c2c-96dd-13f22c4bad55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Command">
+      <UniqueIdentifier>{832fc822-291c-4530-bdf1-ac362d69ec8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Command\Command_CreateObject">
+      <UniqueIdentifier>{f3eb7f5b-8a28-465b-92d7-d754014840dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Command\Command_SelectObject">
+      <UniqueIdentifier>{b4e80121-19b9-4e92-a684-6a85c4e63e0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Utility">
+      <UniqueIdentifier>{56972815-0362-46f1-a54b-7896fd1cfa90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Utility\StateBase">
+      <UniqueIdentifier>{b5b7e213-bb9d-46e7-899b-19895229db8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Utility\Animation2D">
+      <UniqueIdentifier>{edfa4492-d2ec-48b6-bf8d-948f5865ebf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Manager">
+      <UniqueIdentifier>{27b8c3fc-6ecc-4c13-9d52-a9d9e5a9d70b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Manager\ObjectManager">
+      <UniqueIdentifier>{aef89d73-87ab-4b9e-9df5-2c29b501bba1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Manager\ComponentFactory">
+      <UniqueIdentifier>{a470d86a-ac3f-46d9-8885-0fcc643b393d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface">
+      <UniqueIdentifier>{1f4a4757-b67e-4e9c-afdb-f7e77fee01f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface\Object">
+      <UniqueIdentifier>{b22080dc-62aa-4bd6-87d9-de4d74d39d98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface\Object\Component">
+      <UniqueIdentifier>{f5b5ecd3-ec1c-4c18-b4e3-e0b44ddda8c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface\Object\GameObject">
+      <UniqueIdentifier>{22a4d504-044b-4fa1-a745-c53eceeb63f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface\Manager">
+      <UniqueIdentifier>{9e7dc756-cf1d-4182-a754-498835d8493d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface\Manager\ObjectManager">
+      <UniqueIdentifier>{23295931-9204-4b79-8684-2eacc2ce3bc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface\Manager\ComponentFactory">
+      <UniqueIdentifier>{c3c76092-fa5a-48a8-8298-ec81e5488ccb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface\Object\GameObject\Transform">
+      <UniqueIdentifier>{6a27c3b4-7cdf-418e-a848-e4787b7acc5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\ColliderComponent\MeshColliderComponent">
+      <UniqueIdentifier>{f150a6be-5510-4bcc-852b-fa225ad17d47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\ColliderComponent\SphereColliderComponent">
+      <UniqueIdentifier>{47363cf6-cee3-47b2-8a16-b7b1440b05a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\ColliderComponent\BoxColliderComponent">
+      <UniqueIdentifier>{f4d6b3ab-7e6d-4aaf-919d-cb5df4cdc32a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Event">
+      <UniqueIdentifier>{7a679c36-dc06-4d25-a0c1-eddcf1422e90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Event\Collider_Event">
+      <UniqueIdentifier>{adeecf61-c1ed-4056-8f7d-041ebb9d3c64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Manager\ColliderManager">
+      <UniqueIdentifier>{b6900158-91c2-48cf-bd5b-5cd629feccd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\RendererComponent">
+      <UniqueIdentifier>{d5823ffb-4f4f-4581-8f47-96f60d44f6af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\RendererComponent\ModelRendererComponent">
+      <UniqueIdentifier>{f0c285bd-317c-442b-9d4b-88682c527969}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\RendererComponent\TextureRendererComponent">
+      <UniqueIdentifier>{7afef413-0ac4-454f-a2bb-4b3e4a1e6bac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\RendererComponent\SquarePolygonRendererComponent">
+      <UniqueIdentifier>{fa43f490-1e12-4b45-bb22-c691cab55742}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Script\Object\Component\TransformComponent">
+      <UniqueIdentifier>{f110cba6-a958-40ea-827b-8c99d0deb55b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

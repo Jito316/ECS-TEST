@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Src\RendererPch.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\RenderManager.h">
+      <Filter>Src\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdShader\KdAmbientController.h">
+      <Filter>Src\Renderer\KdShader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdShader\KdRenderTargetChange.h">
+      <Filter>Src\Renderer\KdShader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdShader\KdShaderManager.h">
+      <Filter>Src\Renderer\KdShader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdShader\StandardShader\KdStandardShader.h">
+      <Filter>Src\Renderer\KdShader\StandardShader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdShader\SpriteShader\KdSpriteShader.h">
+      <Filter>Src\Renderer\KdShader\SpriteShader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdShader\PostProcessShader\KdPostProcessShader.h">
+      <Filter>Src\Renderer\KdShader\PostProcessShader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\Utility\KdDataStorage.h">
+      <Filter>Src\Renderer\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\Utility\KdDebugWireFrame.h">
+      <Filter>Src\Renderer\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdDirect3D\KdBuffer.h">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdDirect3D\KdCamera.h">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdDirect3D\KdDirect3D.h">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdDirect3D\KdGLTFLoader.h">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdDirect3D\KdMaterial.h">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdDirect3D\KdMesh.h">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdDirect3D\KdModel.h">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdDirect3D\KdTexture.h">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdDirect3D\Polygon\KdPolygon.h">
+      <Filter>Src\Renderer\KdDirect3D\Polygon</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdDirect3D\Polygon\KdSquarePolygon.h">
+      <Filter>Src\Renderer\KdDirect3D\Polygon</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Renderer\KdDirect3D\Polygon\KdTrailPolygon.h">
+      <Filter>Src\Renderer\KdDirect3D\Polygon</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\IRenderer.h">
+      <Filter>Src\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Direct3D\ICamera.h">
+      <Filter>Src\Interface\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Direct3D\IDirect3D.h">
+      <Filter>Src\Interface\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Direct3D\IMaterial.h">
+      <Filter>Src\Interface\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Direct3D\IMesh.h">
+      <Filter>Src\Interface\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Direct3D\IModel.h">
+      <Filter>Src\Interface\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Direct3D\ITexture.h">
+      <Filter>Src\Interface\Direct3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Direct3D\Polygon\IPolygon.h">
+      <Filter>Src\Interface\Direct3D\Polygon</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Direct3D\Polygon\ISquarePolygon.h">
+      <Filter>Src\Interface\Direct3D\Polygon</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Utility\IDebugWireFrame.h">
+      <Filter>Src\Interface\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\Direct3D\Polygon\ITrailPolygon.h">
+      <Filter>Src\Interface\Direct3D\Polygon</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\RendererPch.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\RenderManager.cpp">
+      <Filter>Src\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdShader\KdAmbientController.cpp">
+      <Filter>Src\Renderer\KdShader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdShader\KdRenderTargetChange.cpp">
+      <Filter>Src\Renderer\KdShader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdShader\KdShaderManager.cpp">
+      <Filter>Src\Renderer\KdShader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdShader\StandardShader\KdStandardShader.cpp">
+      <Filter>Src\Renderer\KdShader\StandardShader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdShader\SpriteShader\KdSpriteShader.cpp">
+      <Filter>Src\Renderer\KdShader\SpriteShader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdShader\PostProcessShader\KdPostProcessShader.cpp">
+      <Filter>Src\Renderer\KdShader\PostProcessShader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\Utility\KdDebugWireFrame.cpp">
+      <Filter>Src\Renderer\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdDirect3D\KdBuffer.cpp">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdDirect3D\KdCamera.cpp">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdDirect3D\KdDirect3D.cpp">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdDirect3D\KdGLTFLoader.cpp">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdDirect3D\KdMaterial.cpp">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdDirect3D\KdMesh.cpp">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdDirect3D\KdModel.cpp">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdDirect3D\KdTexture.cpp">
+      <Filter>Src\Renderer\KdDirect3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdDirect3D\Polygon\KdPolygon.cpp">
+      <Filter>Src\Renderer\KdDirect3D\Polygon</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdDirect3D\Polygon\KdSquarePolygon.cpp">
+      <Filter>Src\Renderer\KdDirect3D\Polygon</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Renderer\KdDirect3D\Polygon\KdTrailPolygon.cpp">
+      <Filter>Src\Renderer\KdDirect3D\Polygon</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{b2ab9b62-13c0-4cb5-adcd-f4ee49ca6221}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Renderer">
+      <UniqueIdentifier>{879d0fee-15fd-45f3-8881-11c3041b7a99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Renderer\KdShader">
+      <UniqueIdentifier>{2e85db82-e50f-4e1c-923d-f9dca1e4affd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Renderer\KdShader\StandardShader">
+      <UniqueIdentifier>{2cfe82be-1c22-4183-9735-5013d308c1d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Renderer\KdShader\SpriteShader">
+      <UniqueIdentifier>{8887f7c4-d0b5-4d82-9e9b-89820950249b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Renderer\KdShader\PostProcessShader">
+      <UniqueIdentifier>{4212f613-e448-4485-97aa-8fc67b49362e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Renderer\Utility">
+      <UniqueIdentifier>{f898733e-6846-4ea8-adbb-6ffa4460175d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Renderer\KdDirect3D">
+      <UniqueIdentifier>{08c07054-f9fd-4536-9634-cf7cd7738f26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Renderer\KdDirect3D\Polygon">
+      <UniqueIdentifier>{1ae382df-8bf8-4119-b064-c446018af2d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface">
+      <UniqueIdentifier>{db093682-b3ed-4038-bd63-e6cbec658f25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface\Direct3D">
+      <UniqueIdentifier>{4f74448c-2104-426e-bed1-aa0e77f66afe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface\Direct3D\Polygon">
+      <UniqueIdentifier>{90b153b8-f9be-4044-9ce1-bbb070894655}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface\Utility">
+      <UniqueIdentifier>{12c6c553-f190-4a36-ae46-ffeb9d1b9ea7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Src\Renderer\KdShader\StandardShader\KdStandardShader_PS_GenDepthMapFromLight.hlsl">
+      <Filter>Src\Renderer\KdShader\StandardShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Renderer\KdShader\StandardShader\KdStandardShader_PS_Lit.hlsl">
+      <Filter>Src\Renderer\KdShader\StandardShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Renderer\KdShader\StandardShader\KdStandardShader_PS_UnLit.hlsl">
+      <Filter>Src\Renderer\KdShader\StandardShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Renderer\KdShader\StandardShader\KdStandardShader_VS_GenDepthMapFromLight.hlsl">
+      <Filter>Src\Renderer\KdShader\StandardShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Renderer\KdShader\StandardShader\KdStandardShader_VS_Lit.hlsl">
+      <Filter>Src\Renderer\KdShader\StandardShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Renderer\KdShader\StandardShader\KdStandardShader_VS_UnLit.hlsl">
+      <Filter>Src\Renderer\KdShader\StandardShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Renderer\KdShader\SpriteShader\KdSpriteShader_PS.hlsl">
+      <Filter>Src\Renderer\KdShader\SpriteShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Renderer\KdShader\SpriteShader\KdSpriteShader_VS.hlsl">
+      <Filter>Src\Renderer\KdShader\SpriteShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Renderer\KdShader\PostProcessShader\KdPostProcessShader_PS_Blur.hlsl">
+      <Filter>Src\Renderer\KdShader\PostProcessShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Renderer\KdShader\PostProcessShader\KdPostProcessShader_PS_Bright.hlsl">
+      <Filter>Src\Renderer\KdShader\PostProcessShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Renderer\KdShader\PostProcessShader\KdPostProcessShader_PS_DoF.hlsl">
+      <Filter>Src\Renderer\KdShader\PostProcessShader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Renderer\KdShader\PostProcessShader\KdPostProcessShader_VS.hlsl">
+      <Filter>Src\Renderer\KdShader\PostProcessShader</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\Renderer\KdShader\inc_KdCommon.hlsli">
+      <Filter>Src\Renderer\KdShader</Filter>
+    </None>
+    <None Include="Src\Renderer\KdShader\PostProcessShader\inc_KdPostProcessShader.hlsli">
+      <Filter>Src\Renderer\KdShader\PostProcessShader</Filter>
+    </None>
+    <None Include="Src\Renderer\KdShader\SpriteShader\inc_KdSpriteShader.hlsli">
+      <Filter>Src\Renderer\KdShader\SpriteShader</Filter>
+    </None>
+    <None Include="Src\Renderer\KdShader\StandardShader\inc_KdStandardShader.hlsli">
+      <Filter>Src\Renderer\KdShader\StandardShader</Filter>
+    </None>
+  </ItemGroup>
+</Project>

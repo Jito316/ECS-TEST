@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{F68E02F9-9E24-4BE7-8411-DB5FCA68B518}</ProjectGuid>
+    <RootNamespace>Module01</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;SCRIPT_DLL_EXPORTS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ScriptPch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.\;Src;..\..\..\Library;..\..\..\Library\DirectXTex\DirectXTex;..\..\..\Library\DirectXTK\Inc;..\..\..\Library\nlohmann;..\..\..\Library\magic_enum;..\Core\Src;..\Window\Src;..\Audio\Src;..\Renderer\Src;..\Resource\Src;..\Input\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <ForcedIncludeFiles>ScriptPch.h</ForcedIncludeFiles>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\Library\DirectXTex\Lib\$(Platform)\$(Configuration);..\..\..\Library\DirectXTK\Lib\$(Platform)\$(Configuration);..\..\..\Library\DirectXTK\Lib\$(Platform)\$(Configuration)\Audio;..\Core\$(Platform)\$(Configuration);..\Audio\$(Platform)\$(Configuration);..\Input\$(Platform)\$(Configuration);..\Window\$(Platform)\$(Configuration);..\Renderer\$(Platform)\$(Configuration);..\Resource\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;SCRIPT_DLL_EXPORTS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ScriptPch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>.\;Src;..\..\..\Library;..\..\..\Library\DirectXTex\DirectXTex;..\..\..\Library\DirectXTK\Inc;..\..\..\Library\nlohmann;..\..\..\Library\magic_enum;..\Core\Src;..\Window\Src;..\Audio\Src;..\Renderer\Src;..\Resource\Src;..\Input\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <ForcedIncludeFiles>ScriptPch.h</ForcedIncludeFiles>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\Library\DirectXTex\Lib\$(Platform)\$(Configuration);..\..\..\Library\DirectXTK\Lib\$(Platform)\$(Configuration);..\..\..\Library\DirectXTK\Lib\$(Platform)\$(Configuration)\Audio;..\Core\$(Platform)\$(Configuration);..\Audio\$(Platform)\$(Configuration);..\Input\$(Platform)\$(Configuration);..\Window\$(Platform)\$(Configuration);..\Renderer\$(Platform)\$(Configuration);..\Resource\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>RENDERER_DLL_EXPORTS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\Kernel</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>RENDERER_DLL_EXPORTS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\Kernel</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Interface\IScript.h" />
+    <ClInclude Include="Src\Interface\Manager\ComponentFactory\IComponentFactory.h" />
+    <ClInclude Include="Src\Interface\Manager\ObjectManager\IGameObjectManager.h" />
+    <ClInclude Include="Src\Interface\Object\Component\IComponent.h" />
+    <ClInclude Include="Src\Interface\Object\GameObject\IGameObject.h" />
+    <ClInclude Include="Src\Interface\Object\GameObject\Transform\ITransform.h" />
+    <ClInclude Include="Src\Interface\Object\IObject.h" />
+    <ClInclude Include="Src\ScriptPch.h" />
+    <ClInclude Include="Src\Script\Command\CommandRegister.h" />
+    <ClInclude Include="Src\Script\Command\Command_CreateObject\Command_CreateObject.h" />
+    <ClInclude Include="Src\Script\Command\Command_SelectObject\Command_SelectObject.h" />
+    <ClInclude Include="Src\Script\Event\Collider_Event\Collider_Event.h" />
+    <ClInclude Include="Src\Script\Manager\ColliderManager\ColliderManager.h" />
+    <ClInclude Include="Src\Script\Manager\ComponentFactory\AllComponentRegister.h" />
+    <ClInclude Include="Src\Script\Math\AssetCollision.h" />
+    <ClInclude Include="Src\Script\Math\KdCollision.h" />
+    <ClInclude Include="Src\Script\Object\Component\Audio\AudioListenerComponent\AudioListenerComponent.h" />
+    <ClInclude Include="Src\Script\Object\Component\Audio\AudioPlayerComponent\AudioPlayerComponent.h" />
+    <ClInclude Include="Src\Script\Object\Component\BuildInComponentRegister.h" />
+    <ClInclude Include="Src\Script\Object\Component\CameraComponent\CameraComponent.h" />
+    <ClInclude Include="Src\Script\Object\Component\ColliderComponent\BoxColliderComponent\BoxColliderComponent.h" />
+    <ClInclude Include="Src\Script\Object\Component\ColliderComponent\MeshColliderComponent\MeshColliderComponent.h" />
+    <ClInclude Include="Src\Script\Object\Component\ColliderComponent\SphereColliderComponent\SphereColliderComponent.h" />
+    <ClInclude Include="Src\Script\Object\Component\ModelAnimatorComponent\ModelAnimatorComponent.h" />
+    <ClInclude Include="Src\Script\Object\Component\RendererComponent\BaseRendererComponent.h" />
+    <ClInclude Include="Src\Script\Object\Component\RendererComponent\ModelRendererComponent\ModelRendererComponent.h" />
+    <ClInclude Include="Src\Script\Object\Component\RendererComponent\SquarePolygonRendererComponent\SquarePolygonRendererComponent.h" />
+    <ClInclude Include="Src\Script\Object\Component\RendererComponent\TextureRendererComponent\TextureRendererComponent.h" />
+    <ClInclude Include="Src\Script\Object\Component\TransformComponent\TransformComponent.h" />
+    <ClInclude Include="Src\Script\Script.h" />
+    <ClInclude Include="Src\Script\Manager\ComponentFactory\ComponentFactory.h" />
+    <ClInclude Include="Src\Script\Manager\ObjectManager\GameObjectManager.h" />
+    <ClInclude Include="Src\Script\Object\Component\ColliderComponent\ColliderComponent.h" />
+    <ClInclude Include="Src\Script\Object\Component\Component.h" />
+    <ClInclude Include="Src\Script\Object\Component\RigidbodyComponent\RigidbodyComponent.h" />
+    <ClInclude Include="Src\Script\Object\GameObject\GameObject.h" />
+    <ClInclude Include="Src\Script\Utility\Animation2D\Animation2D.h" />
+    <ClInclude Include="Src\Script\Utility\StateBase\StateBase.h" />
+    <ClInclude Include="Src\Script\Utility\Utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\ScriptPch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Src\Script\Command\CommandRegister.cpp" />
+    <ClCompile Include="Src\Script\Command\Command_CreateObject\Command_CreateObject.cpp" />
+    <ClCompile Include="Src\Script\Command\Command_SelectObject\Command_SelectObject.cpp" />
+    <ClCompile Include="Src\Script\Event\Collider_Event\Collider_Event.cpp" />
+    <ClCompile Include="Src\Script\Manager\ColliderManager\ColliderManager.cpp" />
+    <ClCompile Include="Src\Script\Math\AssetCollision.cpp" />
+    <ClCompile Include="Src\Script\Math\KdCollision.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\Audio\AudioListenerComponent\AudioListenerComponent.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\Audio\AudioPlayerComponent\AudioPlayerComponent.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\CameraComponent\CameraComponent.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\ColliderComponent\BoxColliderComponent\BoxColliderComponent.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\ColliderComponent\MeshColliderComponent\MeshColliderComponent.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\ColliderComponent\SphereColliderComponent\SphereColliderComponent.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\ModelAnimatorComponent\ModelAnimatorComponent.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\RendererComponent\BaseRendererComponent.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\RendererComponent\ModelRendererComponent\ModelRendererComponent.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\RendererComponent\SquarePolygonRendererComponent\SquarePolygonRendererComponent.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\RendererComponent\TextureRendererComponent\TextureRendererComponent.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\TransformComponent\TransformComponent.cpp" />
+    <ClCompile Include="Src\Script\Script.cpp" />
+    <ClCompile Include="Src\Script\Manager\ComponentFactory\ComponentFactory.cpp" />
+    <ClCompile Include="Src\Script\Manager\ObjectManager\GameObjectManager.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\ColliderComponent\ColliderComponent.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\Component.cpp" />
+    <ClCompile Include="Src\Script\Object\Component\RigidbodyComponent\RigidbodyComponent.cpp" />
+    <ClCompile Include="Src\Script\Object\GameObject\GameObject.cpp" />
+    <ClCompile Include="Src\Script\Utility\Animation2D\Animation2D.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

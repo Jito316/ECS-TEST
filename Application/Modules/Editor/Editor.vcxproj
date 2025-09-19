@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Library\imgui\imgui.cpp" />
+    <ClCompile Include="..\..\..\Library\imgui\ImGuizmo\GraphEditor.cpp" />
+    <ClCompile Include="..\..\..\Library\imgui\ImGuizmo\ImCurveEdit.cpp" />
+    <ClCompile Include="..\..\..\Library\imgui\ImGuizmo\ImGradient.cpp" />
+    <ClCompile Include="..\..\..\Library\imgui\ImGuizmo\ImGuizmo.cpp" />
+    <ClCompile Include="..\..\..\Library\imgui\ImGuizmo\ImSequencer.cpp" />
+    <ClCompile Include="..\..\..\Library\imgui\imgui_demo.cpp" />
+    <ClCompile Include="..\..\..\Library\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\..\..\Library\imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="..\..\..\Library\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="..\..\..\Library\imgui\imgui_stdlib.cpp" />
+    <ClCompile Include="..\..\..\Library\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\..\..\Library\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\..\..\Library\imgui\pch.cpp" />
+    <ClCompile Include="Src\EditorPch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\Editor.cpp" />
+    <ClCompile Include="Src\Editor\EditorTask\Button\ButtonTask.cpp" />
+    <ClCompile Include="Src\Editor\EditorTask\Combo\ComboTask.cpp" />
+    <ClCompile Include="Src\Editor\EditorTask\DragScalar\DragScalarTask.cpp" />
+    <ClCompile Include="Src\Editor\EditorTask\EditorTask.cpp" />
+    <ClCompile Include="Src\Editor\EditorTask\Register\EditorTaskRegister.cpp" />
+    <ClCompile Include="Src\Editor\EditorTask\Select\SelectTask.cpp" />
+    <ClCompile Include="Src\Editor\EditorWindow\DebugLog\DebugLog.cpp" />
+    <ClCompile Include="Src\Editor\EditorWindow\GameScreen\FreeCamera\FreeCamera.cpp" />
+    <ClCompile Include="Src\Editor\EditorWindow\GameScreen\GameScreen.cpp" />
+    <ClCompile Include="Src\Editor\EditorWindow\Hierarchy\Hierarchy.cpp" />
+    <ClCompile Include="Src\Editor\EditorWindow\Inspector\Inspector.cpp" />
+    <ClCompile Include="Src\Editor\EditorWindow\KeyConfigEditor\KeyConfigEditor.cpp" />
+    <ClCompile Include="Src\Editor\EditorWindow\ProjectWindow\ProjectWindow.cpp" />
+    <ClCompile Include="Src\Editor\EditorWindow\SetUpScene\SetUpScene.cpp" />
+    <ClCompile Include="Src\Editor\UndoRedo\Action\AddComponent\AddComponent.cpp" />
+    <ClCompile Include="Src\Editor\UndoRedo\Action\AddGameObject\AddGameObject.cpp" />
+    <ClCompile Include="Src\Editor\UndoRedo\Action\DeleteComponent\DeleteComponent.cpp" />
+    <ClCompile Include="Src\Editor\UndoRedo\Action\DeleteGameObject\DeleteGameObject.cpp" />
+    <ClCompile Include="Src\Editor\UndoRedo\Action\EditeGizmo\EditeGizmo.cpp" />
+    <ClCompile Include="Src\Editor\UndoRedo\Action\MoveComponent\MoveComponent.cpp" />
+    <ClCompile Include="Src\Editor\UndoRedo\Action\MoveGameObject\MoveGameObject.cpp" />
+    <ClCompile Include="Src\Editor\UndoRedo\UndoRedo.cpp" />
+    <ClCompile Include="Src\Editor\Utility\DragDrop\DragDrop.cpp" />
+    <ClCompile Include="Src\Editor\Utility\DragDrop\Object\DragDrop_Object.cpp" />
+    <ClCompile Include="Src\Interface\EditorWindow\IEditorWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Library\imgui\imconfig.h" />
+    <ClInclude Include="..\..\..\Library\imgui\imgui.h" />
+    <ClInclude Include="..\..\..\Library\imgui\ImGuizmo\GraphEditor.h" />
+    <ClInclude Include="..\..\..\Library\imgui\ImGuizmo\ImCurveEdit.h" />
+    <ClInclude Include="..\..\..\Library\imgui\ImGuizmo\ImGradient.h" />
+    <ClInclude Include="..\..\..\Library\imgui\ImGuizmo\ImGuizmo.h" />
+    <ClInclude Include="..\..\..\Library\imgui\ImGuizmo\ImSequencer.h" />
+    <ClInclude Include="..\..\..\Library\imgui\ImGuizmo\ImZoomSlider.h" />
+    <ClInclude Include="..\..\..\Library\imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="..\..\..\Library\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="..\..\..\Library\imgui\imgui_internal.h" />
+    <ClInclude Include="..\..\..\Library\imgui\imgui_stdlib.h" />
+    <ClInclude Include="..\..\..\Library\imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\..\..\Library\imgui\imstb_textedit.h" />
+    <ClInclude Include="..\..\..\Library\imgui\imstb_truetype.h" />
+    <ClInclude Include="..\..\..\Library\imgui\ja_glyph_ranges.h" />
+    <ClInclude Include="..\..\..\Library\imgui\pch.h" />
+    <ClInclude Include="Src\EditorPch.h" />
+    <ClInclude Include="Src\Editor\Editor.h" />
+    <ClInclude Include="Src\Editor\EditorTask\Button\ButtonTask.h" />
+    <ClInclude Include="Src\Editor\EditorTask\Combo\ComboTask.h" />
+    <ClInclude Include="Src\Editor\EditorTask\DragScalar\DragScalarTask.h" />
+    <ClInclude Include="Src\Editor\EditorTask\EditorTask.h" />
+    <ClInclude Include="Src\Editor\EditorTask\Register\EditorTaskRegister.h" />
+    <ClInclude Include="Src\Editor\EditorTask\Select\SelectTask.h" />
+    <ClInclude Include="Src\Editor\EditorWindow\DebugLog\DebugLog.h" />
+    <ClInclude Include="Src\Editor\EditorWindow\GameScreen\FreeCamera\FreeCamera.h" />
+    <ClInclude Include="Src\Editor\EditorWindow\GameScreen\GameScreen.h" />
+    <ClInclude Include="Src\Editor\EditorWindow\Hierarchy\Hierarchy.h" />
+    <ClInclude Include="Src\Editor\EditorWindow\Inspector\Inspector.h" />
+    <ClInclude Include="Src\Editor\EditorWindow\KeyConfigEditor\KeyConfigEditor.h" />
+    <ClInclude Include="Src\Editor\EditorWindow\ProjectWindow\FileEditor.h" />
+    <ClInclude Include="Src\Editor\EditorWindow\ProjectWindow\ProjectWindow.h" />
+    <ClInclude Include="Src\Editor\EditorWindow\SetUpScene\SetUpScene.h" />
+    <ClInclude Include="Src\Editor\UndoRedo\Action\AddComponent\AddComponent.h" />
+    <ClInclude Include="Src\Editor\UndoRedo\Action\AddGameObject\AddGameObject.h" />
+    <ClInclude Include="Src\Editor\UndoRedo\Action\DeleteComponent\DeleteComponent.h" />
+    <ClInclude Include="Src\Editor\UndoRedo\Action\DeleteGameObject\DeleteGameObject.h" />
+    <ClInclude Include="Src\Editor\UndoRedo\Action\EditeGizmo\EditeGizmo.h" />
+    <ClInclude Include="Src\Editor\UndoRedo\Action\MoveComponent\MoveComponent.h" />
+    <ClInclude Include="Src\Editor\UndoRedo\Action\MoveGameObject\MoveGameObject.h" />
+    <ClInclude Include="Src\Editor\UndoRedo\UndoRedo.h" />
+    <ClInclude Include="Src\Editor\Utility\DragDrop\DragDrop.h" />
+    <ClInclude Include="Src\Editor\Utility\DragDrop\Object\DragDrop_Object.h" />
+    <ClInclude Include="Src\Editor\Utility\Helper\ImGuiHelper.h" />
+    <ClInclude Include="Src\Editor\Utility\Helper\ImGuizmoHelper.h" />
+    <ClInclude Include="Src\Editor\Utility\Utility.h" />
+    <ClInclude Include="Src\Interface\EditorWindow\IEditorWindow.h" />
+    <ClInclude Include="Src\Interface\IEditor.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{c775905f-4b79-4102-9a18-8def5c59cd0b}</ProjectGuid>
+    <RootNamespace>Editor</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Bin\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Bin\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;EDITOR_DLL_EXPORTS;_DEBUG;EDITOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>EditorPch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>EditorPch.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>.\;Src;..\..\..\Library;..\..\..\Library\DirectXTex\DirectXTex;..\..\..\Library\DirectXTK\Inc;..\..\..\Library\DirectXTK\Audio;..\..\..\Library\nlohmann;..\..\..\Library\magic_enum;..\..\..\Library\imgui;..\Core\Src;..\Window\Src;..\Audio\Src;..\Input\Src;..\Renderer\Src;..\Resource\Src;..\Script\Src</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>..\..\..\Library\DirectXTex\Lib\$(Platform)\$(Configuration);..\..\..\Library\DirectXTK\Lib\$(Platform)\$(Configuration);..\..\..\Library\DirectXTK\Lib\$(Platform)\$(Configuration)\Audio;..\Core\$(Platform)\$(Configuration);..\Window\$(Platform)\$(Configuration);..\Renderer\$(Platform)\$(Configuration);..\Audio\$(Platform)\$(Configuration);..\Input\$(Platform)\$(Configuration);..\Resource\$(Platform)\$(Configuration);..\Script\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(CoreLibraryDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;EDITOR_DLL_EXPORTS;NDEBUG;EDITOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>EditorPch.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>EditorPch.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>.\;Src;..\..\..\Library;..\..\..\Library\DirectXTex\DirectXTex;..\..\..\Library\DirectXTK\Inc;..\..\..\Library\DirectXTK\Audio;..\..\..\Library\nlohmann;..\..\..\Library\magic_enum;..\..\..\Library\imgui;..\Core\Src;..\Window\Src;..\Audio\Src;..\Input\Src;..\Renderer\Src;..\Resource\Src;..\Script\Src</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>..\..\..\Library\DirectXTex\Lib\$(Platform)\$(Configuration);..\..\..\Library\DirectXTK\Lib\$(Platform)\$(Configuration);..\..\..\Library\DirectXTK\Lib\$(Platform)\$(Configuration)\Audio;..\Core\$(Platform)\$(Configuration);..\Window\$(Platform)\$(Configuration);..\Renderer\$(Platform)\$(Configuration);..\Audio\$(Platform)\$(Configuration);..\Input\$(Platform)\$(Configuration);..\Resource\$(Platform)\$(Configuration);..\Script\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(CoreLibraryDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;EDITOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;EDITOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

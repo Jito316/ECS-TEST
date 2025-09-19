@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Library\imgui\imgui.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\imgui\ImGuizmo\GraphEditor.cpp">
+      <Filter>Library\imgui\ImGuizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\imgui\ImGuizmo\ImCurveEdit.cpp">
+      <Filter>Library\imgui\ImGuizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\imgui\ImGuizmo\ImGradient.cpp">
+      <Filter>Library\imgui\ImGuizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\imgui\ImGuizmo\ImGuizmo.cpp">
+      <Filter>Library\imgui\ImGuizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\imgui\ImGuizmo\ImSequencer.cpp">
+      <Filter>Library\imgui\ImGuizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\imgui\imgui_demo.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\imgui\imgui_draw.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\imgui\imgui_impl_dx11.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\imgui\imgui_impl_win32.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\imgui\imgui_stdlib.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\imgui\imgui_tables.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\imgui\imgui_widgets.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Library\imgui\pch.cpp">
+      <Filter>Library\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\EditorPch.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\Editor.cpp">
+      <Filter>Src\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorTask\EditorTask.cpp">
+      <Filter>Src\Editor\EditorTask</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorTask\Register\EditorTaskRegister.cpp">
+      <Filter>Src\Editor\EditorTask\Register</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorTask\DragScalar\DragScalarTask.cpp">
+      <Filter>Src\Editor\EditorTask\DragScalar</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorTask\Combo\ComboTask.cpp">
+      <Filter>Src\Editor\EditorTask\Combo</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorTask\Select\SelectTask.cpp">
+      <Filter>Src\Editor\EditorTask\Select</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorTask\Button\ButtonTask.cpp">
+      <Filter>Src\Editor\EditorTask\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\UndoRedo\UndoRedo.cpp">
+      <Filter>Src\Editor\UndoRedo</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\UndoRedo\Action\AddComponent\AddComponent.cpp">
+      <Filter>Src\Editor\UndoRedo\Action\AddComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\UndoRedo\Action\DeleteComponent\DeleteComponent.cpp">
+      <Filter>Src\Editor\UndoRedo\Action\DeleteComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\UndoRedo\Action\AddGameObject\AddGameObject.cpp">
+      <Filter>Src\Editor\UndoRedo\Action\AddGameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\UndoRedo\Action\MoveGameObject\MoveGameObject.cpp">
+      <Filter>Src\Editor\UndoRedo\Action\MoveGameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\UndoRedo\Action\MoveComponent\MoveComponent.cpp">
+      <Filter>Src\Editor\UndoRedo\Action\MoveComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\UndoRedo\Action\DeleteGameObject\DeleteGameObject.cpp">
+      <Filter>Src\Editor\UndoRedo\Action\DeleteGameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorWindow\KeyConfigEditor\KeyConfigEditor.cpp">
+      <Filter>Src\Editor\EditorWindow\KeyConfigEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorWindow\GameScreen\GameScreen.cpp">
+      <Filter>Src\Editor\EditorWindow\GameScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorWindow\GameScreen\FreeCamera\FreeCamera.cpp">
+      <Filter>Src\Editor\EditorWindow\GameScreen\FreeCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorWindow\Inspector\Inspector.cpp">
+      <Filter>Src\Editor\EditorWindow\Inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorWindow\Hierarchy\Hierarchy.cpp">
+      <Filter>Src\Editor\EditorWindow\Hierarchy</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorWindow\ProjectWindow\ProjectWindow.cpp">
+      <Filter>Src\Editor\EditorWindow\ProjectWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorWindow\SetUpScene\SetUpScene.cpp">
+      <Filter>Src\Editor\EditorWindow\SetUpScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\EditorWindow\DebugLog\DebugLog.cpp">
+      <Filter>Src\Editor\EditorWindow\DebugLog</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\Utility\DragDrop\DragDrop.cpp">
+      <Filter>Src\Editor\Utility\DragDrop</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\Utility\DragDrop\Object\DragDrop_Object.cpp">
+      <Filter>Src\Editor\Utility\DragDrop\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Interface\EditorWindow\IEditorWindow.cpp">
+      <Filter>Src\Interface\EditorWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor\UndoRedo\Action\EditeGizmo\EditeGizmo.cpp">
+      <Filter>Src\Editor\UndoRedo\Action\EditeGizmo</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Library\imgui\imconfig.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\imgui.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\ImGuizmo\GraphEditor.h">
+      <Filter>Library\imgui\ImGuizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\ImGuizmo\ImCurveEdit.h">
+      <Filter>Library\imgui\ImGuizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\ImGuizmo\ImGradient.h">
+      <Filter>Library\imgui\ImGuizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\ImGuizmo\ImGuizmo.h">
+      <Filter>Library\imgui\ImGuizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\ImGuizmo\ImSequencer.h">
+      <Filter>Library\imgui\ImGuizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\ImGuizmo\ImZoomSlider.h">
+      <Filter>Library\imgui\ImGuizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\imgui_impl_dx11.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\imgui_impl_win32.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\imgui_internal.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\imgui_stdlib.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\imstb_rectpack.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\imstb_textedit.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\imstb_truetype.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\ja_glyph_ranges.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Library\imgui\pch.h">
+      <Filter>Library\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\EditorPch.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\Editor.h">
+      <Filter>Src\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorTask\EditorTask.h">
+      <Filter>Src\Editor\EditorTask</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorTask\Register\EditorTaskRegister.h">
+      <Filter>Src\Editor\EditorTask\Register</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorTask\DragScalar\DragScalarTask.h">
+      <Filter>Src\Editor\EditorTask\DragScalar</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorTask\Combo\ComboTask.h">
+      <Filter>Src\Editor\EditorTask\Combo</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorTask\Select\SelectTask.h">
+      <Filter>Src\Editor\EditorTask\Select</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorTask\Button\ButtonTask.h">
+      <Filter>Src\Editor\EditorTask\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\UndoRedo\UndoRedo.h">
+      <Filter>Src\Editor\UndoRedo</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\UndoRedo\Action\AddComponent\AddComponent.h">
+      <Filter>Src\Editor\UndoRedo\Action\AddComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\UndoRedo\Action\DeleteComponent\DeleteComponent.h">
+      <Filter>Src\Editor\UndoRedo\Action\DeleteComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\UndoRedo\Action\AddGameObject\AddGameObject.h">
+      <Filter>Src\Editor\UndoRedo\Action\AddGameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\UndoRedo\Action\MoveGameObject\MoveGameObject.h">
+      <Filter>Src\Editor\UndoRedo\Action\MoveGameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\UndoRedo\Action\MoveComponent\MoveComponent.h">
+      <Filter>Src\Editor\UndoRedo\Action\MoveComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\UndoRedo\Action\DeleteGameObject\DeleteGameObject.h">
+      <Filter>Src\Editor\UndoRedo\Action\DeleteGameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorWindow\KeyConfigEditor\KeyConfigEditor.h">
+      <Filter>Src\Editor\EditorWindow\KeyConfigEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorWindow\GameScreen\GameScreen.h">
+      <Filter>Src\Editor\EditorWindow\GameScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorWindow\GameScreen\FreeCamera\FreeCamera.h">
+      <Filter>Src\Editor\EditorWindow\GameScreen\FreeCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorWindow\Inspector\Inspector.h">
+      <Filter>Src\Editor\EditorWindow\Inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorWindow\Hierarchy\Hierarchy.h">
+      <Filter>Src\Editor\EditorWindow\Hierarchy</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorWindow\ProjectWindow\FileEditor.h">
+      <Filter>Src\Editor\EditorWindow\ProjectWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorWindow\ProjectWindow\ProjectWindow.h">
+      <Filter>Src\Editor\EditorWindow\ProjectWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorWindow\SetUpScene\SetUpScene.h">
+      <Filter>Src\Editor\EditorWindow\SetUpScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\EditorWindow\DebugLog\DebugLog.h">
+      <Filter>Src\Editor\EditorWindow\DebugLog</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\Utility\Utility.h">
+      <Filter>Src\Editor\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\Utility\DragDrop\DragDrop.h">
+      <Filter>Src\Editor\Utility\DragDrop</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\Utility\DragDrop\Object\DragDrop_Object.h">
+      <Filter>Src\Editor\Utility\DragDrop\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\Utility\Helper\ImGuiHelper.h">
+      <Filter>Src\Editor\Utility\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\Utility\Helper\ImGuizmoHelper.h">
+      <Filter>Src\Editor\Utility\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\IEditor.h">
+      <Filter>Src\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\EditorWindow\IEditorWindow.h">
+      <Filter>Src\Interface\EditorWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor\UndoRedo\Action\EditeGizmo\EditeGizmo.h">
+      <Filter>Src\Editor\UndoRedo\Action\EditeGizmo</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Library">
+      <UniqueIdentifier>{72148528-ce80-4860-bdb0-770fdf9b5115}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\imgui">
+      <UniqueIdentifier>{3f26deb3-b2f7-4d1a-bd18-01d30cee05e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\imgui\ImGuizmo">
+      <UniqueIdentifier>{f48b6acf-2294-40e2-b256-9ec809bd274e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{8570110b-2b18-4d1a-abf0-9211a99762c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor">
+      <UniqueIdentifier>{599e9596-d02c-48ff-8f0e-71132163600e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorTask">
+      <UniqueIdentifier>{251bc71f-fe66-4a87-899d-95761c2e249d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorTask\Register">
+      <UniqueIdentifier>{b4da219d-b4b5-4687-b881-190732d967ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorTask\DragScalar">
+      <UniqueIdentifier>{7b3aa820-a075-4c48-b08e-b2e4126111f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorTask\Combo">
+      <UniqueIdentifier>{cc9df48a-3f6c-4db7-9e74-8ebfc23e9268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorTask\Select">
+      <UniqueIdentifier>{3a603864-716a-4f4b-893e-143ed63f764b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorTask\Button">
+      <UniqueIdentifier>{08536a50-cf0b-4edf-944e-7cdde16de98d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\UndoRedo">
+      <UniqueIdentifier>{5294fb23-ce78-43c0-98de-ada1c668c616}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\UndoRedo\Action">
+      <UniqueIdentifier>{a43e1d02-2906-47a0-a2cf-f58ebebc9f49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\UndoRedo\Action\AddComponent">
+      <UniqueIdentifier>{9e53db0c-5c77-4fc9-a08a-93dd68c2d441}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\UndoRedo\Action\DeleteComponent">
+      <UniqueIdentifier>{a267a24d-acfb-4181-a040-5a7553a9cf29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\UndoRedo\Action\AddGameObject">
+      <UniqueIdentifier>{3ceaf708-52e9-4289-b727-7c037d3ad287}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\UndoRedo\Action\MoveGameObject">
+      <UniqueIdentifier>{98dd8e6c-a530-4869-b9ad-3d95f59c4e12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\UndoRedo\Action\MoveComponent">
+      <UniqueIdentifier>{cad64833-d3ab-461d-8d00-eb845c87dca6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\UndoRedo\Action\DeleteGameObject">
+      <UniqueIdentifier>{0bbb7d14-1469-4867-8743-b54161b8cf8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorWindow">
+      <UniqueIdentifier>{88bd1c56-4c19-4e14-a1a5-71e6f872a79d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorWindow\KeyConfigEditor">
+      <UniqueIdentifier>{d4bea830-6705-45a4-99ab-e5cc407d75b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorWindow\GameScreen">
+      <UniqueIdentifier>{ad738bf4-acff-42e6-a1f2-7998ddd2bf4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorWindow\GameScreen\FreeCamera">
+      <UniqueIdentifier>{559f40b2-c0b3-4ef5-9016-9515959e0306}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorWindow\Inspector">
+      <UniqueIdentifier>{1b1a31ba-5636-4559-8361-69b46603d54d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorWindow\Hierarchy">
+      <UniqueIdentifier>{f8acebd9-32b7-4a3a-a3e1-bdba09278e4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorWindow\ProjectWindow">
+      <UniqueIdentifier>{48f0f7bc-0adc-4dba-ac0f-314260d9e146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorWindow\SetUpScene">
+      <UniqueIdentifier>{c891ad7f-ba95-46d4-a1ef-b55e0ee0d772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\EditorWindow\DebugLog">
+      <UniqueIdentifier>{711c29a8-3e27-4e79-bbbf-2959a0e83181}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\Utility">
+      <UniqueIdentifier>{f38ec420-fdef-4aa2-a103-e17b31fed467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\Utility\DragDrop">
+      <UniqueIdentifier>{312a5a5a-19cf-4a7f-a146-9100e249497f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\Utility\DragDrop\Object">
+      <UniqueIdentifier>{7d1ccc01-2a34-41c4-b247-f82db85862fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\Utility\Helper">
+      <UniqueIdentifier>{b04d4c98-aef0-4af1-92b7-249569790629}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface">
+      <UniqueIdentifier>{799265be-25e1-4b5e-98fd-c7792f526b17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface\EditorWindow">
+      <UniqueIdentifier>{77de50e7-e61c-4154-82b5-daf7c16f8469}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor\UndoRedo\Action\EditeGizmo">
+      <UniqueIdentifier>{66444fc6-885c-4f78-8579-2c8490e086b6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

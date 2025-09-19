@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Src\pch.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\IWindow.h">
+      <Filter>Src\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\IWindowEvent.h">
+      <Filter>Src\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Window\Window.h">
+      <Filter>Src\Window</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\pch.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Window\Window.cpp">
+      <Filter>Src\Window</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{950139a0-29b6-4c70-bd57-a73c1b0ca288}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface">
+      <UniqueIdentifier>{9ed8d114-4421-44ae-b7c2-447188c8fa68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Window">
+      <UniqueIdentifier>{c2421eb1-1635-4465-9461-8a73a27e8913}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

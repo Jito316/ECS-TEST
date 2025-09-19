@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{442c949c-6d65-42d2-85ce-4fb49d8c6dce}</ProjectGuid>
+    <RootNamespace>Kernel</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;CORE_DLL_EXPORTS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>.\;.\Src;..\..\..\Library;..\..\..\Library\DirectXTK\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\Library\DirectXTK\Lib\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;CORE_DLL_EXPORTS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>.\;.\Src;..\..\..\Library;..\..\..\Library\DirectXTK\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\Library\DirectXTK\Lib\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>RENDERER_API_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>RENDERER_APINDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Library\nlohmann\adl_serializer.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\byte_container_with_subtype.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\abi_macros.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\conversions\from_json.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\conversions\to_chars.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\conversions\to_json.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\exceptions.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\hash.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\input\binary_reader.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\input\input_adapters.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\input\json_sax.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\input\lexer.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\input\parser.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\input\position_t.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\iterators\internal_iterator.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\iterators\iteration_proxy.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\iterators\iterator_traits.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\iterators\iter_impl.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\iterators\json_reverse_iterator.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\iterators\primitive_iterator.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\json_custom_base_class.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\json_pointer.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\json_ref.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\macro_scope.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\macro_unscope.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\call_std\begin.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\call_std\end.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\cpp_future.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\detected.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\identity_tag.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\is_sax.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\std_fs.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\type_traits.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\void_t.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\output\binary_writer.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\output\output_adapters.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\output\serializer.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\string_concat.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\string_escape.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\detail\value_t.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\json.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\json_fwd.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\ordered_map.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\thirdparty\hedley\hedley.hpp" />
+    <ClInclude Include="..\..\Library\nlohmann\thirdparty\hedley\hedley_undef.hpp" />
+    <ClInclude Include="Src\Core.h" />
+    <ClInclude Include="Src\CoreIncluder.h" />
+    <ClInclude Include="Src\Engine\Command\Command.h" />
+    <ClInclude Include="Src\Engine\Config\ConfigSystem.h" />
+    <ClInclude Include="Src\Engine\Engine.h" />
+    <ClInclude Include="Src\Engine\FPSController\FPSController.h" />
+    <ClInclude Include="Src\Engine\Log\Log.h" />
+    <ClInclude Include="Src\Engine\ModuleSystem\ModuleSystem.h" />
+    <ClInclude Include="Src\Interface\ICommand.h" />
+    <ClInclude Include="Src\Interface\IConfigSystem.h" />
+    <ClInclude Include="Src\Interface\IEngine.h" />
+    <ClInclude Include="Src\Interface\IFPSController.h" />
+    <ClInclude Include="Src\Interface\ILog.h" />
+    <ClInclude Include="Src\Interface\IModule.h" />
+    <ClInclude Include="Src\Interface\IModuleSystem.h" />
+    <ClInclude Include="Src\Math\KdAnimation.h" />
+    <ClInclude Include="Src\Math\KdCollider.h" />
+    <ClInclude Include="Src\Math\KdEasing.h" />
+    <ClInclude Include="Src\Math\KdUVAnimation.h" />
+    <ClInclude Include="Src\Math\Math.h" />
+    <ClInclude Include="Src\pch.h" />
+    <ClInclude Include="Src\Utility\Config\Config.h" />
+    <ClInclude Include="Src\Utility\DllLoader\DllLoader.h" />
+    <ClInclude Include="Src\Utility\Helper\JsonHelper.h" />
+    <ClInclude Include="Src\Utility\KdUtility\KdCSVData.h" />
+    <ClInclude Include="Src\Utility\KdUtility\KdFPSController.h" />
+    <ClInclude Include="Src\Utility\KdUtility\KdUtility.h" />
+    <ClInclude Include="Src\Utility\Utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\Core.cpp" />
+    <ClCompile Include="Src\Engine\Command\Command.cpp" />
+    <ClCompile Include="Src\Engine\Config\ConfigSystem.cpp" />
+    <ClCompile Include="Src\Engine\Engine.cpp" />
+    <ClCompile Include="Src\Engine\FPSController\FPSController.cpp" />
+    <ClCompile Include="Src\Engine\Log\Log.cpp" />
+    <ClCompile Include="Src\Engine\ModuleSystem\ModuleSystem.cpp" />
+    <ClCompile Include="Src\Math\KdAnimation.cpp" />
+    <ClCompile Include="Src\Math\KdCollider.cpp" />
+    <ClCompile Include="Src\Math\KdEasing.cpp" />
+    <ClCompile Include="Src\Math\KdUVAnimation.cpp" />
+    <ClCompile Include="Src\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\Config\Config.cpp" />
+    <ClCompile Include="Src\Utility\DllLoader\DllLoader.cpp" />
+    <ClCompile Include="Src\Utility\KdUtility\KdCSVData.cpp" />
+    <ClCompile Include="Src\Utility\KdUtility\KdFPSController.cpp" />
+    <ClCompile Include="Src\Utility\KdUtility\KdUtility.cpp" />
+    <ClCompile Include="Src\Utility\Utility.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

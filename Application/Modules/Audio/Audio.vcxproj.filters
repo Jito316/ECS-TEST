@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Src\pch.cpp" />
+    <ClCompile Include="Src\KdAudio\KdAudio.cpp">
+      <Filter>KdAudio</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\pch.h" />
+    <ClInclude Include="Src\Interface\IAudio.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\KdAudio\KdAudio.h">
+      <Filter>KdAudio</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{e5c6fc48-de15-44ca-980e-c29015d01af4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KdAudio">
+      <UniqueIdentifier>{53ce3f18-3461-42c4-8db9-4d7dae8c7d2f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

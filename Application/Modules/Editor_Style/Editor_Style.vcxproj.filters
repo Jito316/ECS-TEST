@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Src\pch.cpp" />
+    <ClCompile Include="Src\Interface\IEditor_Style.cpp">
+      <Filter>Src\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor_Style\Editor_Style.cpp">
+      <Filter>Src\Editor_Style</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Editor_Style\EditorWindow\Editor_StyleWindow\Editor_StyleWindow.cpp">
+      <Filter>Src\Editor_Style\EditorWindow\Editor_StyleWindow</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\pch.h" />
+    <ClInclude Include="Src\Interface\IEditor_Style.h">
+      <Filter>Src\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor_Style\Editor_Style.h">
+      <Filter>Src\Editor_Style</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Editor_Style\EditorWindow\Editor_StyleWindow\Editor_StyleWindow.h">
+      <Filter>Src\Editor_Style\EditorWindow\Editor_StyleWindow</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{16cacaf2-eb0c-406f-b947-0e365fdae5d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface">
+      <UniqueIdentifier>{e4f0014c-8258-438a-8e36-293e3e779a52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor_Style">
+      <UniqueIdentifier>{fdaf68a3-7d29-4c3e-91a5-f640a9927739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor_Style\EditorWindow">
+      <UniqueIdentifier>{88362bf0-0d6c-47a4-9722-d3f492cd17c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Editor_Style\EditorWindow\Editor_StyleWindow">
+      <UniqueIdentifier>{3eddd886-7d89-4abd-a097-82d918d660e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

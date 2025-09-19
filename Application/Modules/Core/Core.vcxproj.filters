@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Src\pch.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Core.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\Utility.cpp">
+      <Filter>Src\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\KdUtility\KdCSVData.cpp">
+      <Filter>Src\Utility\KdUtility</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\KdUtility\KdFPSController.cpp">
+      <Filter>Src\Utility\KdUtility</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\KdUtility\KdUtility.cpp">
+      <Filter>Src\Utility\KdUtility</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\DllLoader\DllLoader.cpp">
+      <Filter>Src\Utility\DllLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Engine.cpp">
+      <Filter>Src\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Math\KdAnimation.cpp">
+      <Filter>Src\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Math\KdEasing.cpp">
+      <Filter>Src\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Math\KdUVAnimation.cpp">
+      <Filter>Src\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Math\KdCollider.cpp">
+      <Filter>Src\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Log\Log.cpp">
+      <Filter>Src\Engine\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Config\ConfigSystem.cpp">
+      <Filter>Src\Engine\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Command\Command.cpp">
+      <Filter>Src\Engine\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\FPSController\FPSController.cpp">
+      <Filter>Src\Engine\FPSController</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\ModuleSystem\ModuleSystem.cpp">
+      <Filter>Src\Engine\ModuleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\Config\Config.cpp">
+      <Filter>Src\Utility\Config</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\pch.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\CoreIncluder.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Core.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utility\Utility.h">
+      <Filter>Src\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utility\Helper\JsonHelper.h">
+      <Filter>Src\Utility\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utility\KdUtility\KdCSVData.h">
+      <Filter>Src\Utility\KdUtility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utility\KdUtility\KdFPSController.h">
+      <Filter>Src\Utility\KdUtility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utility\KdUtility\KdUtility.h">
+      <Filter>Src\Utility\KdUtility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utility\DllLoader\DllLoader.h">
+      <Filter>Src\Utility\DllLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Engine.h">
+      <Filter>Src\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Math\KdUVAnimation.h">
+      <Filter>Src\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Math\KdAnimation.h">
+      <Filter>Src\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Math\KdEasing.h">
+      <Filter>Src\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Math\Math.h">
+      <Filter>Src\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\adl_serializer.hpp">
+      <Filter>Library\nlohmann</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\byte_container_with_subtype.hpp">
+      <Filter>Library\nlohmann</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\json.hpp">
+      <Filter>Library\nlohmann</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\json_fwd.hpp">
+      <Filter>Library\nlohmann</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\ordered_map.hpp">
+      <Filter>Library\nlohmann</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\abi_macros.hpp">
+      <Filter>Library\nlohmann\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\exceptions.hpp">
+      <Filter>Library\nlohmann\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\hash.hpp">
+      <Filter>Library\nlohmann\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\json_custom_base_class.hpp">
+      <Filter>Library\nlohmann\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\json_pointer.hpp">
+      <Filter>Library\nlohmann\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\json_ref.hpp">
+      <Filter>Library\nlohmann\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\macro_scope.hpp">
+      <Filter>Library\nlohmann\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\macro_unscope.hpp">
+      <Filter>Library\nlohmann\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\string_concat.hpp">
+      <Filter>Library\nlohmann\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\string_escape.hpp">
+      <Filter>Library\nlohmann\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\value_t.hpp">
+      <Filter>Library\nlohmann\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\conversions\from_json.hpp">
+      <Filter>Library\nlohmann\detail\conversions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\conversions\to_chars.hpp">
+      <Filter>Library\nlohmann\detail\conversions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\conversions\to_json.hpp">
+      <Filter>Library\nlohmann\detail\conversions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\input\binary_reader.hpp">
+      <Filter>Library\nlohmann\detail\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\input\input_adapters.hpp">
+      <Filter>Library\nlohmann\detail\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\input\json_sax.hpp">
+      <Filter>Library\nlohmann\detail\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\input\lexer.hpp">
+      <Filter>Library\nlohmann\detail\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\input\parser.hpp">
+      <Filter>Library\nlohmann\detail\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\input\position_t.hpp">
+      <Filter>Library\nlohmann\detail\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\iterators\internal_iterator.hpp">
+      <Filter>Library\nlohmann\detail\iterators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\iterators\iteration_proxy.hpp">
+      <Filter>Library\nlohmann\detail\iterators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\iterators\iterator_traits.hpp">
+      <Filter>Library\nlohmann\detail\iterators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\iterators\iter_impl.hpp">
+      <Filter>Library\nlohmann\detail\iterators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\iterators\json_reverse_iterator.hpp">
+      <Filter>Library\nlohmann\detail\iterators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\iterators\primitive_iterator.hpp">
+      <Filter>Library\nlohmann\detail\iterators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\cpp_future.hpp">
+      <Filter>Library\nlohmann\detail\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\detected.hpp">
+      <Filter>Library\nlohmann\detail\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\identity_tag.hpp">
+      <Filter>Library\nlohmann\detail\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\is_sax.hpp">
+      <Filter>Library\nlohmann\detail\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\std_fs.hpp">
+      <Filter>Library\nlohmann\detail\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\type_traits.hpp">
+      <Filter>Library\nlohmann\detail\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\void_t.hpp">
+      <Filter>Library\nlohmann\detail\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\call_std\begin.hpp">
+      <Filter>Library\nlohmann\detail\meta\call_std</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\meta\call_std\end.hpp">
+      <Filter>Library\nlohmann\detail\meta\call_std</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\output\binary_writer.hpp">
+      <Filter>Library\nlohmann\detail\output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\output\output_adapters.hpp">
+      <Filter>Library\nlohmann\detail\output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\detail\output\serializer.hpp">
+      <Filter>Library\nlohmann\detail\output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\thirdparty\hedley\hedley.hpp">
+      <Filter>Library\nlohmann\thirdparty\hedley</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Library\nlohmann\thirdparty\hedley\hedley_undef.hpp">
+      <Filter>Library\nlohmann\thirdparty\hedley</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Math\KdCollider.h">
+      <Filter>Src\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\IEngine.h">
+      <Filter>Src\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\IFPSController.h">
+      <Filter>Src\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\ILog.h">
+      <Filter>Src\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\IModule.h">
+      <Filter>Src\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Log\Log.h">
+      <Filter>Src\Engine\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Config\ConfigSystem.h">
+      <Filter>Src\Engine\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\ICommand.h">
+      <Filter>Src\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\IConfigSystem.h">
+      <Filter>Src\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Command\Command.h">
+      <Filter>Src\Engine\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interface\IModuleSystem.h">
+      <Filter>Src\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\FPSController\FPSController.h">
+      <Filter>Src\Engine\FPSController</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\ModuleSystem\ModuleSystem.h">
+      <Filter>Src\Engine\ModuleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utility\Config\Config.h">
+      <Filter>Src\Utility\Config</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Library">
+      <UniqueIdentifier>{cb4ef13d-cb15-42cf-94e1-e9b36edd2663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\nlohmann">
+      <UniqueIdentifier>{6987e954-7bd3-4482-8679-4e803349b6be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\nlohmann\detail">
+      <UniqueIdentifier>{186035ed-1fd1-4997-ad61-0f02c98752a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\nlohmann\detail\conversions">
+      <UniqueIdentifier>{2148cae4-6a47-4524-9436-c9849b3c580c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\nlohmann\detail\input">
+      <UniqueIdentifier>{bd40be76-399c-40d2-94c0-84b86a01a6e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\nlohmann\detail\iterators">
+      <UniqueIdentifier>{35fd0e33-96ee-4b3c-8f85-38fc04d164b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\nlohmann\detail\meta">
+      <UniqueIdentifier>{d9a02466-3d0a-40d5-9f47-8fc2863f449d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\nlohmann\detail\meta\call_std">
+      <UniqueIdentifier>{1af97e7e-d67e-4741-808c-a22c9fa01f20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\nlohmann\detail\output">
+      <UniqueIdentifier>{c16c46a4-f312-4633-a307-e28c932d5c6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\nlohmann\thirdparty">
+      <UniqueIdentifier>{530e0e83-edc3-411b-a446-89a7582fac97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\nlohmann\thirdparty\hedley">
+      <UniqueIdentifier>{c6803a80-d97c-4a20-888d-f74aa5c4a475}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{68d211ec-e2a7-487d-8291-68d2c6f15cb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Utility">
+      <UniqueIdentifier>{064681d0-cdce-49ef-a1e6-b9948190d8f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Utility\Helper">
+      <UniqueIdentifier>{ee25ffaf-be96-4a37-9888-70ba0f96a645}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Utility\KdUtility">
+      <UniqueIdentifier>{ff66877a-5df1-410f-8d82-673581e0f979}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Utility\DllLoader">
+      <UniqueIdentifier>{4cca3e9d-d693-4bdb-89d2-dd73ff226caa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine">
+      <UniqueIdentifier>{1dc5ff30-45ad-42e9-963e-6ad993d5d0b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Math">
+      <UniqueIdentifier>{b7b9fe57-98d5-4824-b939-23988eea6c4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Interface">
+      <UniqueIdentifier>{563f5320-02c7-4053-9480-dd7b09591890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\Log">
+      <UniqueIdentifier>{38cde227-43e2-4544-bc4a-60faca57e3c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\Config">
+      <UniqueIdentifier>{61e40669-1ab8-4192-9652-80a6531aa4a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\Command">
+      <UniqueIdentifier>{2c7c0566-8b7a-4c37-bb2a-a78cc0afe0b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\ModuleSystem">
+      <UniqueIdentifier>{6b166b53-7293-4183-ac94-e62132224f1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\FPSController">
+      <UniqueIdentifier>{9e1ce619-065d-4495-a3a0-4ffb457a69ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Utility\Config">
+      <UniqueIdentifier>{88e0bf21-f165-4b1f-ba5f-0b11498c8a4e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
