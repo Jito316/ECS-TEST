@@ -7,16 +7,16 @@ namespace Command {
 	private:
 		struct Coll {
 			std::unique_ptr<Math::KdCollider> coll;
-			std::weak_ptr<IGameObject> object;
+			Entity object;
 		};
 		struct Result {
 			Math::KdCollider::CollisionResult result;
-			std::weak_ptr<IGameObject> object;
+			Entity object;
 		};
 
 		bool CreateColls();
 		bool CreateResults();
-		bool PickUpObject(std::weak_ptr<IGameObject>& _object);
+		bool PickUpObject(Entity& _object);
 		
 		std::list<Coll>				m_colls;
 		Math::KdCollider::RayInfo*  m_pInfo = nullptr;

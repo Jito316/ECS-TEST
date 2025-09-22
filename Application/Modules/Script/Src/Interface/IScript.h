@@ -5,9 +5,6 @@
 #define  SCRIPT_API __declspec(dllimport)
 #endif
 
-class IGameObjectManager;
-class IComponentFactory;
-
 enum RuntimeState 
 {
 	Play = 1,
@@ -31,9 +28,6 @@ public:
 
 	virtual const std::string& GetStartName() const = 0;
 	virtual std::string& WorkStartName() = 0;
-
-	virtual IGameObjectManager* GetGameObjectManager() = 0;
-	virtual IComponentFactory* GetComponentFactroy() = 0;
 
 	virtual bool SetState(const RuntimeState _state) = 0;
 	virtual bool isPlay() = 0;

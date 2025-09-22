@@ -9,12 +9,14 @@ namespace Command {
 			json = Utility::JsonHelper::InputJson(path.data());
 		}
 
-		std::list<std::shared_ptr<IGameObject>>* results = (std::list<std::shared_ptr<IGameObject>>*)value[3];
+		std::list<Entity>* results = (std::list<Entity>*)value[3];
+		/*
 		GameObject::CreateObject(
 			json,
 			value[1] ? (*(std::weak_ptr<IGameObject>*)value[1]) : std::weak_ptr<IGameObject>(),
 			value[2] ? (std::list<std::shared_ptr<IGameObject>>*)value[2] : nullptr
 			);
+		*/
 		return true;
 	}
 }

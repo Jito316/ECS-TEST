@@ -1,18 +1,12 @@
 #pragma once
-class GameObjectManager;
-class ComponentFactory;
-class ColliderManager;
+#include"Interface/IScript.h"
+#include"Script/ECS/Manager/ECSManager.h"
 
-class Script :public IScript
+class Script
+	:public IScript
+	,public ECSManager
 {
 public:
-	bool Entry()override;
-	void SetUp();
-	void Update();
-	void Shutdown();
-
-	void ImGuiUpdate()override;
-
 	void LoadScene(const std::string& _name, const bool _bSave = false)override;
 
 	const std::string& GetNowSceneName() const override { return m_nowScene; }
@@ -24,16 +18,20 @@ public:
 	const std::string& GetStartName() const override { return m_startScene; }
 	std::string& WorkStartName() override { return m_startScene; }
 
-	IGameObjectManager* GetGameObjectManager() override;
-	IComponentFactory* GetComponentFactroy() override;
-	ColliderManager* GetColliderManager();
-
 	bool SetState(const RuntimeState _state)override;
 	bool isPlay()override;
 	bool isStop()override;
 	bool isEdit()override;
 
+	void ImGuiUpdate()override;
+
 private:
+	bool Entry()override;
+
+	void SetUp();
+	void Update();
+	void Shutdown();
+
 	std::map <std::string, std::string> m_sceneList;
 	std::string m_startScene;
 	std::string	m_nowScene;
@@ -41,10 +39,6 @@ private:
 
 	bool m_callLoad = false;
 	bool m_bSave = false;
-
-	GameObjectManager* m_pGameObjectManager = nullptr;
-	ComponentFactory* m_pComponentFactory = nullptr;
-	ColliderManager* m_pColliderManager = nullptr;
 
 	std::shared_ptr<JTN::Message::CommandWorker::TaskMap> m_taskMap = nullptr;
 

@@ -1,7 +1,5 @@
 #include "Command_SelectObject.h"
 #include "Script/Math/AssetCollision.h"
-#include "Script/Object/Component/RendererComponent/ModelRendererComponent/ModelRendererComponent.h"
-#include "Script/Object/Component/RendererComponent/SquarePolygonRendererComponent/SquarePolygonRendererComponent.h"
 
 namespace Command {
 	bool SelectGameObject::Task(void** value)
@@ -25,7 +23,7 @@ namespace Command {
 			return false;
 		}
 
-		if (!PickUpObject(*(std::weak_ptr<IGameObject>*)value[1])) {
+		if (!PickUpObject(*(Entity*)value[1])) {
 			return false;
 		}
 
@@ -34,6 +32,8 @@ namespace Command {
 
 	bool SelectGameObject::CreateColls()
 	{
+		/*
+		GETSCRIPT.GetComponent<>
 		m_colls.clear();
 		for (auto& it : GameObject::FindObjectOfComponents<ModelRendererComponent>()) {
 			auto coll = std::make_unique<Math::KdCollider>(); coll->RegisterCollisionShape(std::to_string((int)it.lock().get()), std::make_shared<ModelWorkCollision>(it.lock()->GetModelWork().lock(), Math::KdCollider::Type::TypeEvent));
@@ -44,12 +44,14 @@ namespace Command {
 			auto coll = std::make_unique<Math::KdCollider>(); coll->RegisterCollisionShape(std::to_string((int)it.lock().get()), std::make_shared<KdPolygonCollision>(poly, Math::KdCollider::Type::TypeEvent));
 			m_colls.push_back({ std::move(coll),it.lock()->GetOwner() });
 		}
+		*/
 
 		return m_colls.size();
 	}
 
 	bool SelectGameObject::CreateResults()
 	{
+		/*
 		m_results.clear();
 		Math::KdCollider::RayInfo& info = *m_pInfo;
 		std::list<Math::KdCollider::CollisionResult> result;
@@ -59,12 +61,13 @@ namespace Command {
 				result.clear();
 			}
 		}
+		*/
 		return m_results.size();
 	}
 
-	bool SelectGameObject::PickUpObject(std::weak_ptr<IGameObject>& _object)
+	bool SelectGameObject::PickUpObject(Entity& _object)
 	{
-		std::weak_ptr<IGameObject> resultObject;
+		Entity resultObject = -1;
 		float hitLength = 0.f;
 		for (auto it = m_results.begin()
 			; it != m_results.end()
@@ -82,7 +85,7 @@ namespace Command {
 			}
 		}
 
-		if (resultObject.expired()) {
+		if (resultObject == -1) {
 			return false;
 		}
 

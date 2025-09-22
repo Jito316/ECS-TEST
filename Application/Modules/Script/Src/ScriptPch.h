@@ -105,13 +105,7 @@
 #include "Interface/IResource.h"
 
 #include "Interface/IScript.h"
-#include "Interface/Manager/ComponentFactory/IComponentFactory.h"
-#include "Interface/Manager/ObjectManager/IGameObjectManager.h"
-#include "Interface/Object/Component/IComponent.h"
-#include "Interface/Object/GameObject/IGameObject.h"
-#include "Interface/Object/GameObject/Transform/ITransform.h"
 
 #include "Script/Script.h"
 #include "Script/Utility/Utility.h"
-#include "Script/Object/GameObject/GameObject.h"
-#include "Script/Object/Component/Component.h"
+#include "Script/ECS/ECS.h"

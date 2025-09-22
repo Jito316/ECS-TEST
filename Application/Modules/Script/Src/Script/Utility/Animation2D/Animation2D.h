@@ -1,5 +1,4 @@
 ﻿#pragma once
-
 class Animation2D
 {
 public:

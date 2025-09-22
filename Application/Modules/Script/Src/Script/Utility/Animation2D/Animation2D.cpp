@@ -1,4 +1,5 @@
 ﻿#include "Animation2D.h"
+using namespace Utility;
 
 void Animation2D::PreUpdate(Math::Rectangle& _rect)
 {
